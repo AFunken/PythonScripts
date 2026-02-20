@@ -1,0 +1,35 @@
+{
+  "name": "MV_XFMR",
+  "tagType": "UdtType",
+  "tags": [
+    {
+      "alarms": [
+        {
+          "mode": "WhenTrue",
+          "name": "Alarm"
+        }
+      ],
+      "valueSource": "opc",
+      "dataType": "Boolean",
+      "documentation": "High Winding Temperature",
+      "name": "HI_WIND_TEMP",
+      "tagType": "AtomicTag",
+      "Metadata": {
+        "shortDescription": "High Winding Temperature",
+        "states": [
+          {
+            "label": "False",
+            "value": false
+          },
+          {
+            "label": "True",
+            "value": true
+          }
+        ]
+      },
+      "historyEnabled": "true",
+      "historySampleRateUnits": "MIN",
+      "historySampleRate": 5
+    }
+  ]
+}

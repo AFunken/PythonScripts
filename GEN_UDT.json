@@ -1,0 +1,1250 @@
+{
+  "name": "GEN",
+  "tagType": "UdtType",
+  "parameters": {
+    "Device": {
+      "dataType": "String",
+      "value": ""
+    },
+    "Server": {
+      "dataType": "String",
+      "value": "Ignition OPC UA Server"
+    }
+  },
+  "tags": [
+    {
+      "valueSource": "opc",
+      "dataType": "Int2",
+      "documentation": "Battery Voltage",
+      "name": "BATT_V",
+      "tagType": "AtomicTag",
+      "engUnit": "V",
+      "opcItemPath": {
+        "bindType": "parameter",
+        "binding": "ns=1;s=[{Device}]HR61"
+      },
+      "Metadata": {
+        "shortDescription": "Battery Voltage"
+      }
+    },
+    {
+      "valueSource": "opc",
+      "dataType": "Int2",
+      "documentation": "Coolant Temperature",
+      "name": "CLNT_TEMP",
+      "tagType": "AtomicTag",
+      "engUnit": "°F",
+      "opcItemPath": {
+        "bindType": "parameter",
+        "binding": "ns=1;s=[{Device}]HR64"
+      },
+      "Metadata": {
+        "shortDescription": "Coolant Temperature"
+      }
+    },
+    {
+      "alarms": [
+        {
+          "mode": "WhenTrue",
+          "name": "Alarm"
+        }
+      ],
+      "valueSource": "opc",
+      "dataType": "Int2",
+      "documentation": "Common Alarm",
+      "name": "CMN_ALM",
+      "tagType": "AtomicTag",
+      "opcItemPath": {
+        "bindType": "parameter",
+        "binding": "ns=1;s=[{Device}]HR561"
+      },
+      "Metadata": {
+        "shortDescription": "Common Alarm",
+        "states": [
+          {
+            "label": "Normal",
+            "value": false
+          },
+          {
+            "label": "Alarm",
+            "value": true
+          }
+        ]
+      }
+    },
+    {
+      "alarms": [
+        {
+          "mode": "WhenTrue",
+          "name": "Alarm"
+        }
+      ],
+      "valueSource": "opc",
+      "dataType": "Int2",
+      "documentation": "Common Shutdown",
+      "name": "CMN_SHTDN",
+      "tagType": "AtomicTag",
+      "opcItemPath": {
+        "bindType": "parameter",
+        "binding": "ns=1;s=[{Device}]HR400.13"
+      },
+      "Metadata": {
+        "shortDescription": "Common Shutdown",
+        "states": [
+          {
+            "label": "Normal",
+            "value": false
+          },
+          {
+            "label": "Alarm",
+            "value": true
+          }
+        ]
+      }
+    },
+    {
+      "alarms": [
+        {
+          "mode": "WhenTrue",
+          "name": "Alarm"
+        }
+      ],
+      "valueSource": "opc",
+      "dataType": "Int2",
+      "documentation": "Communications Failure",
+      "name": "COMM_FAIL",
+      "tagType": "AtomicTag",
+      "opcItemPath": {
+        "bindType": "parameter",
+        "binding": "ns=1;s=[{Device}]HR231"
+      },
+      "Metadata": {
+        "shortDescription": "Communications Failure",
+        "states": [
+          {
+            "label": "Inactive",
+            "value": false
+          },
+          {
+            "label": "Active",
+            "value": true
+          },
+          {
+            "label": "Failed",
+            "value": "2"
+          }
+        ]
+      }
+    },
+    {
+      "alarms": [
+        {
+          "mode": "WhenTrue",
+          "name": "Alarm"
+        }
+      ],
+      "valueSource": "opc",
+      "dataType": "Int2",
+      "documentation": "Control Switch Position",
+      "name": "CTRL_SW_POS",
+      "tagType": "AtomicTag",
+      "opcItemPath": {
+        "bindType": "parameter",
+        "binding": "ns=1;s=[{Device}]HR10"
+      },
+      "Metadata": {
+        "shortDescription": "Control Switch Position",
+        "states": [
+          {
+            "label": "Off",
+            "value": false
+          },
+          {
+            "label": "Manual",
+            "value": true
+          },
+          {
+            "label": "Auto",
+            "value": "2"
+          }
+        ]
+      }
+    },
+    {
+      "alarms": [
+        {
+          "mode": "WhenTrue",
+          "name": "Alarm"
+        }
+      ],
+      "valueSource": "opc",
+      "dataType": "Int2",
+      "documentation": "Rupture Basin Switch",
+      "name": "RUPT_BASIN_SW",
+      "tagType": "AtomicTag",
+      "opcItemPath": {
+        "bindType": "parameter",
+        "binding": "ns=1;s=[{Device}]HR516"
+      },
+      "Metadata": {
+        "shortDescription": "Rupture Basin Switch",
+        "states": [
+          {
+            "label": "Normal",
+            "value": false
+          },
+          {
+            "label": "Alarm",
+            "value": true
+          }
+        ]
+      }
+    },
+    {
+      "alarms": [
+        {
+          "mode": "WhenTrue",
+          "name": "Alarm"
+        }
+      ],
+      "valueSource": "opc",
+      "dataType": "Int2",
+      "documentation": "Emergency Stop",
+      "name": "E_STOP",
+      "tagType": "AtomicTag",
+      "opcItemPath": {
+        "bindType": "parameter",
+        "binding": "ns=1;s=[{Device}]HR512"
+      },
+      "Metadata": {
+        "shortDescription": "Emergency Stop",
+        "states": [
+          {
+            "label": "Normal",
+            "value": false
+          },
+          {
+            "label": "Alarm",
+            "value": true
+          }
+        ]
+      }
+    },
+    {
+      "valueSource": "opc",
+      "dataType": "Int4",
+      "documentation": "Engine Runtime",
+      "name": "ENG_RT",
+      "tagType": "AtomicTag",
+      "engUnit": "hrs",
+      "opcItemPath": {
+        "bindType": "parameter",
+        "binding": "ns=1;s=[{Device}]HR71"
+      },
+      "Metadata": {
+        "shortDescription": "Engine Runtime"
+      }
+    },
+    {
+      "valueSource": "opc",
+      "dataType": "Int2",
+      "documentation": "Engine Speed RPM",
+      "name": "ENG_SPD_RPM",
+      "tagType": "AtomicTag",
+      "engUnit": "rpm",
+      "opcItemPath": {
+        "bindType": "parameter",
+        "binding": "ns=1;s=[{Device}]HR68"
+      },
+      "Metadata": {
+        "shortDescription": "Engine Speed RPM"
+      },
+      "historyEnabled": "true",
+      "historySampleRateUnits": "MIN",
+      "historySampleRate": 5
+    },
+    {
+      "alarms": [
+        {
+          "mode": "WhenTrue",
+          "name": "Alarm"
+        }
+      ],
+      "valueSource": "opc",
+      "dataType": "Int2",
+      "documentation": "Failed to Start",
+      "name": "FAIL_TO_STRT",
+      "tagType": "AtomicTag",
+      "opcItemPath": {
+        "bindType": "parameter",
+        "binding": "ns=1;s=[{Device}]HR400.1"
+      },
+      "Metadata": {
+        "shortDescription": "Failed to Start",
+        "states": [
+          {
+            "label": "Normal",
+            "value": false
+          },
+          {
+            "label": "Alarm",
+            "value": true
+          }
+        ]
+      }
+    },
+    {
+      "valueSource": "opc",
+      "dataType": "Int4",
+      "documentation": "Frequency",
+      "name": "FREQ",
+      "tagType": "AtomicTag",
+      "opcItemPath": {
+        "bindType": "parameter",
+        "binding": "ns=1;s=[{Device}]HR145"
+      },
+      "Metadata": {
+        "shortDescription": "Frequency"
+      }
+    },
+    {
+      "valueSource": "opc",
+      "dataType": "Int2",
+      "documentation": "Generator Start Command",
+      "name": "GEN_STRT_CMD",
+      "tagType": "AtomicTag",
+      "opcItemPath": {
+        "bindType": "parameter",
+        "binding": "ns=1;s=[{Device}]HR283"
+      },
+      "Metadata": {
+        "shortDescription": "Generator Start Command"
+      }
+    },
+    {
+      "valueSource": "opc",
+      "dataType": "Int2",
+      "documentation": "Generator Run",
+      "name": "GEN_ZR",
+      "tagType": "AtomicTag",
+      "opcItemPath": {
+        "bindType": "parameter",
+        "binding": "ns=1;s=[{Device}]HR283"
+      },
+      "Metadata": {
+        "shortDescription": "Generator Run"
+      }
+    },
+    {
+      "valueSource": "opc",
+      "dataType": "Int4",
+      "documentation": "Genset Load",
+      "name": "GENSET_LOAD",
+      "tagType": "AtomicTag",
+      "opcItemPath": {
+        "bindType": "parameter",
+        "binding": "ns=1;s=[{Device}]HR2002"
+      },
+      "Metadata": {
+        "shortDescription": "Genset Load"
+      },
+      "historyEnabled": "true",
+      "historySampleRateUnits": "MIN",
+      "historySampleRate": 5
+    },
+    {
+      "alarms": [
+        {
+          "mode": "WhenTrue",
+          "name": "Alarm"
+        }
+      ],
+      "valueSource": "opc",
+      "dataType": "Int2",
+      "documentation": "Ground Fault",
+      "name": "GND_FLT",
+      "tagType": "AtomicTag",
+      "opcItemPath": {
+        "bindType": "parameter",
+        "binding": "ns=1;s=[{Device}]HR3292"
+      },
+      "Metadata": {
+        "shortDescription": "Ground Fault",
+        "states": [
+          {
+            "label": "Normal",
+            "value": false
+          },
+          {
+            "label": "Alarm",
+            "value": true
+          }
+        ]
+      }
+    },
+    {
+      "alarms": [
+        {
+          "mode": "WhenTrue",
+          "name": "Alarm"
+        }
+      ],
+      "valueSource": "opc",
+      "dataType": "Int2",
+      "documentation": "High AC Voltage",
+      "name": "HIGH_AC_V",
+      "tagType": "AtomicTag",
+      "opcItemPath": {
+        "bindType": "parameter",
+        "binding": "ns=1;s=[{Device}]HR400.3"
+      },
+      "Metadata": {
+        "shortDescription": "High AC Voltage",
+        "states": [
+          {
+            "label": "Normal",
+            "value": false
+          },
+          {
+            "label": "Alarm",
+            "value": true
+          }
+        ]
+      }
+    },
+    {
+      "alarms": [
+        {
+          "mode": "WhenTrue",
+          "name": "Alarm"
+        }
+      ],
+      "valueSource": "opc",
+      "dataType": "Int2",
+      "documentation": "High Coolant Temperature",
+      "name": "HIGH_CLNT_TEMP",
+      "tagType": "AtomicTag",
+      "opcItemPath": {
+        "bindType": "parameter",
+        "binding": "ns=1;s=[{Device}]HR400.7"
+      },
+      "Metadata": {
+        "shortDescription": "High Coolant Temperature",
+        "states": [
+          {
+            "label": "Normal",
+            "value": false
+          },
+          {
+            "label": "Alarm",
+            "value": true
+          }
+        ]
+      }
+    },
+    {
+      "alarms": [
+        {
+          "mode": "WhenTrue",
+          "name": "Alarm"
+        }
+      ],
+      "valueSource": "opc",
+      "dataType": "Int2",
+      "documentation": "High Coolant Temperature Shutdown",
+      "name": "HIGH_CLNT_TEMP_SHTDN",
+      "tagType": "AtomicTag",
+      "opcItemPath": {
+        "bindType": "parameter",
+        "binding": "ns=1;s=[{Device}]HR400.1"
+      },
+      "Metadata": {
+        "shortDescription": "High Coolant Temperature Shutdown",
+        "states": [
+          {
+            "label": "Normal",
+            "value": false
+          },
+          {
+            "label": "Alarm",
+            "value": true
+          }
+        ]
+      }
+    },
+    {
+      "valueSource": "opc",
+      "dataType": "Int2",
+      "documentation": "Three Phase Current",
+      "name": "I_3PH",
+      "tagType": "AtomicTag",
+      "engUnit": "A",
+      "opcItemPath": {
+        "bindType": "parameter",
+        "binding": "ns=1;s=[{Device}]HR29"
+      },
+      "Metadata": {
+        "shortDescription": "Three Phase Current"
+      }
+    },
+    {
+      "valueSource": "opc",
+      "dataType": "Int2",
+      "documentation": "Current Phase A",
+      "name": "I_A",
+      "tagType": "AtomicTag",
+      "engUnit": "A",
+      "opcItemPath": {
+        "bindType": "parameter",
+        "binding": "ns=1;s=[{Device}]HR26"
+      },
+      "Metadata": {
+        "shortDescription": "Current Phase A"
+      },
+      "historyEnabled": "true",
+      "historySampleRateUnits": "MIN",
+      "historySampleRate": 5
+    },
+    {
+      "valueSource": "opc",
+      "dataType": "Int2",
+      "documentation": "Current Phase B",
+      "name": "I_B",
+      "tagType": "AtomicTag",
+      "engUnit": "A",
+      "opcItemPath": {
+        "bindType": "parameter",
+        "binding": "ns=1;s=[{Device}]HR27"
+      },
+      "Metadata": {
+        "shortDescription": "Current Phase B"
+      },
+      "historyEnabled": "true",
+      "historySampleRateUnits": "MIN",
+      "historySampleRate": 5
+    },
+    {
+      "valueSource": "opc",
+      "dataType": "Int2",
+      "documentation": "Current Phase C",
+      "name": "I_C",
+      "tagType": "AtomicTag",
+      "engUnit": "A",
+      "opcItemPath": {
+        "bindType": "parameter",
+        "binding": "ns=1;s=[{Device}]HR28"
+      },
+      "Metadata": {
+        "shortDescription": "Current Phase C"
+      },
+      "historyEnabled": "true",
+      "historySampleRateUnits": "MIN",
+      "historySampleRate": 5
+    },
+    {
+      "valueSource": "opc",
+      "dataType": "Int2",
+      "documentation": "Neutral Current",
+      "name": "I_N",
+      "tagType": "AtomicTag",
+      "engUnit": "A",
+      "opcItemPath": {
+        "bindType": "parameter",
+        "binding": "ns=1;s=[{Device}]HR30"
+      },
+      "Metadata": {
+        "shortDescription": "Neutral Current"
+      },
+      "historyEnabled": "true",
+      "historySampleRateUnits": "MIN",
+      "historySampleRate": 5
+    },
+    {
+      "valueSource": "opc",
+      "dataType": "Int2",
+      "documentation": "Apparent Power",
+      "name": "KVA",
+      "tagType": "AtomicTag",
+      "engUnit": "kVA",
+      "opcItemPath": {
+        "bindType": "parameter",
+        "binding": "ns=1;s=[{Device}]HR43"
+      },
+      "Metadata": {
+        "shortDescription": "Apparent Power"
+      },
+      "historyEnabled": "true",
+      "historySampleRateUnits": "MIN",
+      "historySampleRate": 5
+    },
+    {
+      "valueSource": "opc",
+      "dataType": "Int2",
+      "documentation": "Reactive Power",
+      "name": "KVAR",
+      "tagType": "AtomicTag",
+      "engUnit": "kVAR",
+      "opcItemPath": {
+        "bindType": "parameter",
+        "binding": "ns=1;s=[{Device}]HR38"
+      },
+      "Metadata": {
+        "shortDescription": "Reactive Power"
+      },
+      "historyEnabled": "true",
+      "historySampleRateUnits": "MIN",
+      "historySampleRate": 5
+    },
+    {
+      "valueSource": "opc",
+      "dataType": "Int2",
+      "documentation": "Real Power",
+      "name": "KW",
+      "tagType": "AtomicTag",
+      "engUnit": "kW",
+      "opcItemPath": {
+        "bindType": "parameter",
+        "binding": "ns=1;s=[{Device}]HR34"
+      },
+      "Metadata": {
+        "shortDescription": "Real Power"
+      },
+      "historyEnabled": "true",
+      "historySampleRateUnits": "MIN",
+      "historySampleRate": 5
+    },
+    {
+      "alarms": [
+        {
+          "mode": "WhenTrue",
+          "name": "Alarm"
+        }
+      ],
+      "valueSource": "opc",
+      "dataType": "Int2",
+      "documentation": "Low AC Voltage",
+      "name": "LOW_AC_V",
+      "tagType": "AtomicTag",
+      "opcItemPath": {
+        "bindType": "parameter",
+        "binding": "ns=1;s=[{Device}]HR400.4"
+      },
+      "Metadata": {
+        "shortDescription": "Low AC Voltage",
+        "states": [
+          {
+            "label": "Normal",
+            "value": false
+          },
+          {
+            "label": "Alarm",
+            "value": true
+          }
+        ]
+      }
+    },
+    {
+      "alarms": [
+        {
+          "mode": "WhenTrue",
+          "name": "Alarm"
+        }
+      ],
+      "valueSource": "opc",
+      "dataType": "Int2",
+      "documentation": "Low Battery Voltage",
+      "name": "LOW_BATT_V",
+      "tagType": "AtomicTag",
+      "opcItemPath": {
+        "bindType": "parameter",
+        "binding": "ns=1;s=[{Device}]HR4.4"
+      },
+      "Metadata": {
+        "shortDescription": "Low Battery Voltage",
+        "states": [
+          {
+            "label": "Normal",
+            "value": false
+          },
+          {
+            "label": "Alarm",
+            "value": true
+          }
+        ]
+      }
+    },
+    {
+      "alarms": [
+        {
+          "mode": "WhenTrue",
+          "name": "Alarm"
+        }
+      ],
+      "valueSource": "opc",
+      "dataType": "Int2",
+      "documentation": "Low Coolant Levels",
+      "name": "LOW_CLNT_LVL",
+      "tagType": "AtomicTag",
+      "opcItemPath": {
+        "bindType": "parameter",
+        "binding": "ns=1;s=[{Device}]HR3280"
+      },
+      "Metadata": {
+        "shortDescription": "Low Coolant Levels",
+        "states": [
+          {
+            "label": "Normal",
+            "value": false
+          },
+          {
+            "label": "Alarm",
+            "value": true
+          }
+        ]
+      }
+    },
+    {
+      "alarms": [
+        {
+          "mode": "WhenTrue",
+          "name": "Alarm"
+        }
+      ],
+      "valueSource": "opc",
+      "dataType": "Int2",
+      "documentation": "Low Coolant Temperature",
+      "name": "LOW_CLNT_TEMP",
+      "tagType": "AtomicTag",
+      "opcItemPath": {
+        "bindType": "parameter",
+        "binding": "ns=1;s=[{Device}]HR400.8"
+      },
+      "Metadata": {
+        "shortDescription": "Low Coolant Temperature",
+        "states": [
+          {
+            "label": "Normal",
+            "value": false
+          },
+          {
+            "label": "Alarm",
+            "value": true
+          }
+        ]
+      }
+    },
+    {
+      "alarms": [
+        {
+          "mode": "WhenTrue",
+          "name": "Alarm"
+        }
+      ],
+      "valueSource": "opc",
+      "dataType": "Int2",
+      "documentation": "Low Fuel Switch",
+      "name": "LOW_FUEL_SW",
+      "tagType": "AtomicTag",
+      "opcItemPath": {
+        "bindType": "parameter",
+        "binding": "ns=1;s=[{Device}]HR500"
+      },
+      "Metadata": {
+        "shortDescription": "Low Fuel Switch",
+        "states": [
+          {
+            "label": "Normal",
+            "value": false
+          },
+          {
+            "label": "Alarm",
+            "value": true
+          }
+        ]
+      }
+    },
+    {
+      "alarms": [
+        {
+          "mode": "WhenTrue",
+          "name": "Alarm"
+        }
+      ],
+      "valueSource": "opc",
+      "dataType": "Int2",
+      "documentation": "Low Oil Pressure",
+      "name": "LOW_OIL_PRES",
+      "tagType": "AtomicTag",
+      "opcItemPath": {
+        "bindType": "parameter",
+        "binding": "ns=1;s=[{Device}]HR400.2"
+      },
+      "Metadata": {
+        "shortDescription": "Low Oil Pressure"
+      }
+    },
+    {
+      "valueSource": "opc",
+      "dataType": "Int4",
+      "documentation": "Number of Starts",
+      "name": "NUM_STRT",
+      "tagType": "AtomicTag",
+      "opcItemPath": {
+        "bindType": "parameter",
+        "binding": "ns=1;s=[{Device}]HR75"
+      },
+      "Metadata": {
+        "shortDescription": "Number of Starts"
+      },
+      "historyEnabled": "true",
+      "historySampleRateUnits": "MIN",
+      "historySampleRate": 5
+    },
+    {
+      "valueSource": "opc",
+      "dataType": "Int2",
+      "documentation": "Oil Pressure",
+      "name": "OIL_PRES",
+      "tagType": "AtomicTag",
+      "engUnit": "PSI",
+      "opcItemPath": {
+        "bindType": "parameter",
+        "binding": "ns=1;s=[{Device}]HR62"
+      },
+      "Metadata": {
+        "shortDescription": "Oil Pressure"
+      }
+    },
+    {
+      "valueSource": "opc",
+      "dataType": "Int2",
+      "documentation": "Oil Temperature",
+      "name": "OIL_TEMP",
+      "tagType": "AtomicTag",
+      "engUnit": "°F",
+      "opcItemPath": {
+        "bindType": "parameter",
+        "binding": "ns=1;s=[{Device}]HR63"
+      },
+      "Metadata": {
+        "shortDescription": "Oil Temperature"
+      }
+    },
+    {
+      "alarms": [
+        {
+          "mode": "WhenTrue",
+          "name": "Alarm"
+        }
+      ],
+      "valueSource": "opc",
+      "dataType": "Int2",
+      "documentation": "Over Frequency",
+      "name": "OVR_FREQ",
+      "tagType": "AtomicTag",
+      "opcItemPath": {
+        "bindType": "parameter",
+        "binding": "ns=1;s=[{Device}]HR400.5"
+      },
+      "Metadata": {
+        "shortDescription": "Over Frequency",
+        "states": [
+          {
+            "label": "Normal",
+            "value": false
+          },
+          {
+            "label": "Alarm",
+            "value": true
+          }
+        ]
+      }
+    },
+    {
+      "alarms": [
+        {
+          "mode": "WhenTrue",
+          "name": "Alarm"
+        }
+      ],
+      "valueSource": "opc",
+      "dataType": "Int2",
+      "documentation": "Overload",
+      "name": "OVRLD",
+      "tagType": "AtomicTag",
+      "opcItemPath": {
+        "bindType": "parameter",
+        "binding": "ns=1;s=[{Device}]HR13.9"
+      },
+      "Metadata": {
+        "shortDescription": "Overload",
+        "states": [
+          {
+            "label": "Normal",
+            "value": false
+          },
+          {
+            "label": "Alarm",
+            "value": true
+          }
+        ]
+      }
+    },
+    {
+      "alarms": [
+        {
+          "mode": "WhenTrue",
+          "name": "Alarm"
+        }
+      ],
+      "valueSource": "opc",
+      "dataType": "Int2",
+      "documentation": "Overspeed",
+      "name": "OVRSPD",
+      "tagType": "AtomicTag",
+      "opcItemPath": {
+        "bindType": "parameter",
+        "binding": "ns=1;s=[{Device}]HR400.8"
+      },
+      "Metadata": {
+        "shortDescription": "Overspeed",
+        "states": [
+          {
+            "label": "Normal",
+            "value": false
+          },
+          {
+            "label": "Alarm",
+            "value": true
+          }
+        ]
+      }
+    },
+    {
+      "valueSource": "opc",
+      "dataType": "Int1",
+      "documentation": "Power Factor",
+      "name": "PF",
+      "tagType": "AtomicTag",
+      "opcItemPath": {
+        "bindType": "parameter",
+        "binding": "ns=1;s=[{Device}]HR39"
+      },
+      "Metadata": {
+        "shortDescription": "Power Factor"
+      }
+    },
+    {
+      "alarms": [
+        {
+          "mode": "WhenTrue",
+          "name": "Alarm"
+        }
+      ],
+      "valueSource": "opc",
+      "dataType": "Int2",
+      "documentation": "Phase Over Current",
+      "name": "PH_OVR_I",
+      "tagType": "AtomicTag",
+      "opcItemPath": {
+        "bindType": "parameter",
+        "binding": "ns=1;s=[{Device}]HR8.1"
+      },
+      "Metadata": {
+        "shortDescription": "Phase Over Current",
+        "states": [
+          {
+            "label": "Normal",
+            "value": false
+          },
+          {
+            "label": "Alarm",
+            "value": true
+          }
+        ]
+      }
+    },
+    {
+      "alarms": [
+        {
+          "mode": "WhenTrue",
+          "name": "Alarm"
+        }
+      ],
+      "valueSource": "opc",
+      "dataType": "Int4",
+      "documentation": "Reverse kW",
+      "name": "REV_KW",
+      "tagType": "AtomicTag",
+      "engUnit": "kW",
+      "opcItemPath": {
+        "bindType": "parameter",
+        "binding": "ns=1;s=[{Device}]HR47"
+      },
+      "Metadata": {
+        "shortDescription": "Reverse kW",
+        "states": [
+          {
+            "label": "Normal",
+            "value": false
+          },
+          {
+            "label": "Alarm",
+            "value": true
+          }
+        ]
+      }
+    },
+    {
+      "valueSource": "opc",
+      "dataType": "Int4",
+      "documentation": "Total Fuel Consumption",
+      "name": "TOT_FUEL",
+      "tagType": "AtomicTag",
+      "engUnit": "gal",
+      "opcItemPath": {
+        "bindType": "parameter",
+        "binding": "ns=1;s=[{Device}]HR73"
+      },
+      "Metadata": {
+        "shortDescription": "Total Fuel Consumption"
+      },
+      "historyEnabled": "true",
+      "historySampleRateUnits": "MIN",
+      "historySampleRate": 5
+    },
+    {
+      "valueSource": "opc",
+      "dataType": "Int4",
+      "documentation": "Total Kilowatt Hours",
+      "name": "TOT_KWH",
+      "tagType": "AtomicTag",
+      "opcItemPath": {
+        "bindType": "parameter",
+        "binding": "ns=1;s=[{Device}]HR49"
+      },
+      "Metadata": {
+        "shortDescription": "Total Kilowatt Hours"
+      }
+    },
+    {
+      "alarms": [
+        {
+          "mode": "WhenTrue",
+          "name": "Alarm"
+        }
+      ],
+      "valueSource": "opc",
+      "dataType": "Int2",
+      "documentation": "Under Frequency",
+      "name": "UND_FREQ",
+      "tagType": "AtomicTag",
+      "opcItemPath": {
+        "bindType": "parameter",
+        "binding": "ns=1;s=[{Device}]HR400.6"
+      },
+      "Metadata": {
+        "shortDescription": "Under Frequency",
+        "states": [
+          {
+            "label": "Normal",
+            "value": false
+          },
+          {
+            "label": "Alarm",
+            "value": true
+          }
+        ]
+      }
+    },
+    {
+      "valueSource": "opc",
+      "dataType": "Int2",
+      "documentation": "Voltage Phase A to Phase B",
+      "name": "V_AB",
+      "tagType": "AtomicTag",
+      "engUnit": "V",
+      "opcItemPath": {
+        "bindType": "parameter",
+        "binding": "ns=1;s=[{Device}]HR22"
+      },
+      "Metadata": {
+        "shortDescription": "Voltage Phase A to Phase B"
+      },
+      "historyEnabled": "true",
+      "historySampleRateUnits": "MIN",
+      "historySampleRate": 5
+    },
+    {
+      "valueSource": "opc",
+      "dataType": "Int2",
+      "documentation": "Voltage Phase A to Neutral",
+      "name": "V_AN",
+      "tagType": "AtomicTag",
+      "engUnit": "V",
+      "opcItemPath": {
+        "bindType": "parameter",
+        "binding": "ns=1;s=[{Device}]HR18"
+      },
+      "Metadata": {
+        "shortDescription": "Voltage Phase A to Neutral"
+      },
+      "historyEnabled": "true",
+      "historySampleRateUnits": "MIN",
+      "historySampleRate": 5
+    },
+    {
+      "valueSource": "opc",
+      "dataType": "Int2",
+      "documentation": "Voltage Phase B to Phase C",
+      "name": "V_BC",
+      "tagType": "AtomicTag",
+      "engUnit": "V",
+      "opcItemPath": {
+        "bindType": "parameter",
+        "binding": "ns=1;s=[{Device}]HR23"
+      },
+      "Metadata": {
+        "shortDescription": "Voltage Phase B to Phase C"
+      },
+      "historyEnabled": "true",
+      "historySampleRateUnits": "MIN",
+      "historySampleRate": 5
+    },
+    {
+      "valueSource": "opc",
+      "dataType": "Int2",
+      "documentation": "Voltage Phase B to Neutral",
+      "name": "V_BN",
+      "tagType": "AtomicTag",
+      "engUnit": "V",
+      "opcItemPath": {
+        "bindType": "parameter",
+        "binding": "ns=1;s=[{Device}]HR19"
+      },
+      "Metadata": {
+        "shortDescription": "Voltage Phase B to Neutral"
+      }
+    },
+    {
+      "valueSource": "opc",
+      "dataType": "Int2",
+      "documentation": "Voltage Phase C to Phase A",
+      "name": "V_CA",
+      "tagType": "AtomicTag",
+      "engUnit": "V",
+      "opcItemPath": {
+        "bindType": "parameter",
+        "binding": "ns=1;s=[{Device}]HR24"
+      },
+      "Metadata": {
+        "shortDescription": "Voltage Phase C to Phase A"
+      }
+    },
+    {
+      "valueSource": "opc",
+      "dataType": "Int2",
+      "documentation": "Voltage Phase C to Nuetral",
+      "name": "V_CN",
+      "tagType": "AtomicTag",
+      "engUnit": "V",
+      "opcItemPath": {
+        "bindType": "parameter",
+        "binding": "ns=1;s=[{Device}]HR20"
+      },
+      "Metadata": {
+        "shortDescription": "Voltage Phase C to Nuetral"
+      }
+    },
+    {
+      "alarms": [
+        {
+          "mode": "WhenTrue",
+          "name": "Alarm"
+        }
+      ],
+      "valueSource": "opc",
+      "dataType": "Int2",
+      "documentation": "Engine Control Warning",
+      "name": "ENG_CTRL_WRN",
+      "tagType": "AtomicTag",
+      "opcItemPath": {
+        "bindType": "parameter",
+        "binding": "ns=1;s=[{Device}]HR228"
+      },
+      "Metadata": {
+        "shortDescription": "Engine Control Warning",
+        "states": [
+          {
+            "label": "Normal",
+            "value": false
+          },
+          {
+            "label": "Alarm",
+            "value": true
+          }
+        ]
+      }
+    },
+    {
+      "valueSource": "opc",
+      "dataType": "Int2",
+      "documentation": "Controller Mode",
+      "name": "CTRL_MODE",
+      "tagType": "AtomicTag",
+      "opcItemPath": {
+        "bindType": "parameter",
+        "binding": "ns=1;s=[{Device}]HR283"
+      },
+      "Metadata": {
+        "shortDescription": "Controller Mode",
+        "states": [
+          {
+            "label": "Off",
+            "value": false
+          },
+          {
+            "label": "Ready",
+            "value": true
+          },
+          {
+            "label": "Setup",
+            "value": "2"
+          },
+          {
+            "label": "Starting",
+            "value": "3"
+          },
+          {
+            "label": "Idle",
+            "value": "4"
+          },
+          {
+            "label": "Rated",
+            "value": "5"
+          },
+          {
+            "label": "Stop Normal",
+            "value": "6"
+          },
+          {
+            "label": "Stop Emergency",
+            "value": "7"
+          },
+          {
+            "label": "Factory Test",
+            "value": "8"
+          },
+          {
+            "label": "Wait to Power Down",
+            "value": "9"
+          },
+          {
+            "label": "Regeneration",
+            "value": "10"
+          }
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,3 @@
+py ignition_udt_tool.py build "STD_DI\STD_DI_UDT.xlsx" "STD_DI\STD_DI.json"
+
+py UDT_Creation\ignition_udt_tool.py build "UDT_Creation\STD_DI\STD_DI_UDT.xlsx" "UDT_Creation\STD_DI\STD_DI.json"

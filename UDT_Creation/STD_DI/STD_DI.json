@@ -1,0 +1,499 @@
+{
+  "name": "STD_DI",
+  "tagType": "UdtType",
+  "parameters": {
+    "Device": {
+      "dataType": "String"
+    },
+    "Server": {
+      "dataType": "String",
+      "value": "Ignition OPC UA Server"
+    }
+  },
+  "tags": [
+    {
+      "Metadata": {
+        "shortDescription": "Simulated Raw Value",
+        "longDescription": "",
+        "states": [
+          {
+            "label": "False",
+            "value": 0
+          },
+          {
+            "label": "True",
+            "value": 1
+          }
+        ]
+      },
+      "valueSource": "opc",
+      "opcItemPath": {
+        "bindType": "parameter",
+        "binding": "ns=1;s=[{Device}]"
+      },
+      "opcServer": {
+        "bindType": "parameter",
+        "binding": "{Server}"
+      },
+      "dataType": "Boolean",
+      "documentation": "Simulated raw input state used when raw simulation mode is active.",
+      "name": "Inp_SimRawState",
+      "tagType": "AtomicTag"
+    },
+    {
+      "Metadata": {
+        "shortDescription": "Enable Input",
+        "longDescription": ""
+      },
+      "valueSource": "opc",
+      "opcItemPath": {
+        "bindType": "parameter",
+        "binding": "ns=1;s=[{Device}]"
+      },
+      "opcServer": {
+        "bindType": "parameter",
+        "binding": "{Server}"
+      },
+      "dataType": "Boolean",
+      "documentation": "Enable Input - System Defined Parameter",
+      "name": "EnableIn",
+      "tagType": "AtomicTag"
+    },
+    {
+      "Metadata": {
+        "shortDescription": "Invert Raw Input",
+        "longDescription": ""
+      },
+      "valueSource": "opc",
+      "opcItemPath": {
+        "bindType": "parameter",
+        "binding": "ns=1;s=[{Device}]"
+      },
+      "opcServer": {
+        "bindType": "parameter",
+        "binding": "{Server}"
+      },
+      "dataType": "Boolean",
+      "documentation": "When true, logically invert the raw input state before debounce and alarm evaluation.",
+      "name": "Cfg_Invert_Enable",
+      "tagType": "AtomicTag"
+    },
+    {
+      "Metadata": {
+        "shortDescription": "Simulated EU Value",
+        "longDescription": "",
+        "states": [
+          {
+            "label": "False",
+            "value": 0
+          },
+          {
+            "label": "True",
+            "value": 1
+          }
+        ]
+      },
+      "valueSource": "opc",
+      "opcItemPath": {
+        "bindType": "parameter",
+        "binding": "ns=1;s=[{Device}]"
+      },
+      "opcServer": {
+        "bindType": "parameter",
+        "binding": "{Server}"
+      },
+      "dataType": "Boolean",
+      "documentation": "Final active process value (PV) after simulation, inversion, and debounce; 1 = input ON.",
+      "name": "Inp_SimEUState",
+      "tagType": "AtomicTag"
+    },
+    {
+      "Metadata": {
+        "shortDescription": "IO Fault",
+        "longDescription": ""
+      },
+      "valueSource": "opc",
+      "opcItemPath": {
+        "bindType": "parameter",
+        "binding": "ns=1;s=[{Device}]"
+      },
+      "opcServer": {
+        "bindType": "parameter",
+        "binding": "{Server}"
+      },
+      "dataType": "Boolean",
+      "documentation": "Simulated logical PV state used when EU simulation mode is active.",
+      "name": "Inp_IOFault",
+      "tagType": "AtomicTag",
+      "alarms": [
+        {
+          "name": "Alarm",
+          "mode": "WhenTrue",
+          "label": "External IO Fault",
+          "priority": "Low"
+        }
+      ]
+    },
+    {
+      "Metadata": {
+        "shortDescription": "",
+        "longDescription": ""
+      },
+      "valueSource": "opc",
+      "opcItemPath": {
+        "bindType": "parameter",
+        "binding": "ns=1;s=[{Device}]"
+      },
+      "opcServer": {
+        "bindType": "parameter",
+        "binding": "{Server}"
+      },
+      "dataType": "Int2",
+      "documentation": "Target (expected) logical state of the input used for target deviation alarm checking.",
+      "name": "Cfg_SystemNumber",
+      "tagType": "AtomicTag"
+    },
+    {
+      "Metadata": {
+        "shortDescription": "Alarm Active Status",
+        "longDescription": ""
+      },
+      "valueSource": "opc",
+      "opcItemPath": {
+        "bindType": "parameter",
+        "binding": "ns=1;s=[{Device}]"
+      },
+      "opcServer": {
+        "bindType": "parameter",
+        "binding": "{Server}"
+      },
+      "dataType": "Boolean",
+      "documentation": "Status bit indicating any alarm associated with this digital input is currently active.",
+      "name": "Sts_AlarmActv",
+      "tagType": "AtomicTag",
+      "alarms": [
+        {
+          "name": "Alarm",
+          "mode": "WhenTrue",
+          "label": "Any Alarm Active",
+          "priority": "Low"
+        }
+      ]
+    },
+    {
+      "Metadata": {
+        "shortDescription": "Status",
+        "longDescription": "",
+        "states": [
+          {
+            "label": "Off",
+            "value": false
+          },
+          {
+            "label": "On",
+            "value": true
+          }
+        ]
+      },
+      "valueSource": "opc",
+      "opcItemPath": {
+        "bindType": "parameter",
+        "binding": "ns=1;s=[{Device}]"
+      },
+      "opcServer": {
+        "bindType": "parameter",
+        "binding": "{Server}"
+      },
+      "dataType": "Boolean",
+      "documentation": "Status indicating EU-level simulation mode is currently selected.",
+      "name": "Out_PVActv",
+      "tagType": "AtomicTag",
+      "historyEnabled": true,
+      "historyProvider": "Historian",
+      "sampleMode": "OnChange"
+    },
+    {
+      "Metadata": {
+        "shortDescription": "Raw Simulation Status",
+        "longDescription": "",
+        "states": [
+          {
+            "label": "Disabled",
+            "value": false
+          },
+          {
+            "label": "Enabled",
+            "value": true
+          }
+        ]
+      },
+      "valueSource": "opc",
+      "opcItemPath": {
+        "bindType": "parameter",
+        "binding": "ns=1;s=[{Device}]"
+      },
+      "opcServer": {
+        "bindType": "parameter",
+        "binding": "{Server}"
+      },
+      "dataType": "Boolean",
+      "documentation": "Local enable for EU-level simulation mode (sets EnumSimMode to EU simulation).",
+      "name": "Sts_SimRawSig",
+      "tagType": "AtomicTag"
+    },
+    {
+      "Metadata": {
+        "shortDescription": "",
+        "longDescription": ""
+      },
+      "valueSource": "opc",
+      "opcItemPath": {
+        "bindType": "parameter",
+        "binding": "ns=1;s=[{Device}]"
+      },
+      "opcServer": {
+        "bindType": "parameter",
+        "binding": "{Server}"
+      },
+      "dataType": "Boolean",
+      "documentation": "Raw input status (after sim selection) before inversion and debounce; 1 = input energized.",
+      "name": "Actv_RawInputState",
+      "tagType": "AtomicTag"
+    },
+    {
+      "Metadata": {
+        "shortDescription": "Enable EU Simulation",
+        "longDescription": ""
+      },
+      "valueSource": "opc",
+      "opcItemPath": {
+        "bindType": "parameter",
+        "binding": "ns=1;s=[{Device}]"
+      },
+      "opcServer": {
+        "bindType": "parameter",
+        "binding": "{Server}"
+      },
+      "dataType": "Boolean",
+      "documentation": "Local enable for raw simulation mode (sets EnumSimMode to raw simulation).",
+      "name": "Enable_SimEU",
+      "tagType": "AtomicTag"
+    },
+    {
+      "Metadata": {
+        "shortDescription": "",
+        "longDescription": ""
+      },
+      "valueSource": "opc",
+      "opcItemPath": {
+        "bindType": "parameter",
+        "binding": "ns=1;s=[{Device}]"
+      },
+      "opcServer": {
+        "bindType": "parameter",
+        "binding": "{Server}"
+      },
+      "dataType": "Boolean",
+      "documentation": "Internal active state after inversion and debounce; 1 = input logically energized.",
+      "name": "Wrk_PVActv",
+      "tagType": "AtomicTag"
+    },
+    {
+      "Metadata": {
+        "shortDescription": "Enable Output",
+        "longDescription": ""
+      },
+      "valueSource": "opc",
+      "opcItemPath": {
+        "bindType": "parameter",
+        "binding": "ns=1;s=[{Device}]"
+      },
+      "opcServer": {
+        "bindType": "parameter",
+        "binding": "{Server}"
+      },
+      "dataType": "Boolean",
+      "documentation": "Enable Output - System Defined Parameter",
+      "name": "EnableOut",
+      "tagType": "AtomicTag"
+    },
+    {
+      "Metadata": {
+        "shortDescription": "EU Simulation Status",
+        "longDescription": "",
+        "states": [
+          {
+            "label": "Disabled",
+            "value": false
+          },
+          {
+            "label": "Enabled",
+            "value": true
+          }
+        ]
+      },
+      "valueSource": "opc",
+      "opcItemPath": {
+        "bindType": "parameter",
+        "binding": "ns=1;s=[{Device}]"
+      },
+      "opcServer": {
+        "bindType": "parameter",
+        "binding": "{Server}"
+      },
+      "dataType": "Boolean",
+      "documentation": "Status indicating raw simulation mode is currently selected.",
+      "name": "Sts_SimEU",
+      "tagType": "AtomicTag"
+    },
+    {
+      "Metadata": {
+        "shortDescription": "",
+        "longDescription": "",
+        "states": [
+          {
+            "label": "Disabled",
+            "value": 0
+          },
+          {
+            "label": "Warning",
+            "value": 1
+          },
+          {
+            "label": "Alarm",
+            "value": 2
+          }
+        ]
+      },
+      "valueSource": "opc",
+      "opcItemPath": {
+        "bindType": "parameter",
+        "binding": "ns=1;s=[{Device}]"
+      },
+      "opcServer": {
+        "bindType": "parameter",
+        "binding": "{Server}"
+      },
+      "dataType": "Int2",
+      "documentation": "External I/O fault input (card fault, open-wire, etc.) for this digital input.",
+      "name": "Cfg_IOFault_Type",
+      "tagType": "AtomicTag"
+    },
+    {
+      "Metadata": {
+        "shortDescription": "",
+        "longDescription": ""
+      },
+      "valueSource": "opc",
+      "opcItemPath": {
+        "bindType": "parameter",
+        "binding": "ns=1;s=[{Device}]"
+      },
+      "opcServer": {
+        "bindType": "parameter",
+        "binding": "{Server}"
+      },
+      "dataType": "Boolean",
+      "documentation": "Status indicating all alarm conditions are cleared and the operator may issue a reset.",
+      "name": "Sts_ResetReady",
+      "tagType": "AtomicTag"
+    },
+    {
+      "Metadata": {
+        "shortDescription": "Raw Input",
+        "longDescription": ""
+      },
+      "valueSource": "opc",
+      "opcItemPath": {
+        "bindType": "parameter",
+        "binding": "ns=1;s=[{Device}]"
+      },
+      "opcServer": {
+        "bindType": "parameter",
+        "binding": "{Server}"
+      },
+      "dataType": "Boolean",
+      "documentation": "Physical digital input signal (raw state before inversion, debounce, or simulation).",
+      "name": "Inp_PVraw",
+      "tagType": "AtomicTag"
+    },
+    {
+      "Metadata": {
+        "shortDescription": "Alarm Reset Command",
+        "longDescription": ""
+      },
+      "valueSource": "opc",
+      "opcItemPath": {
+        "bindType": "parameter",
+        "binding": "ns=1;s=[{Device}]"
+      },
+      "opcServer": {
+        "bindType": "parameter",
+        "binding": "{Server}"
+      },
+      "dataType": "Boolean",
+      "documentation": "Local reset command for alarms associated with this digital input.",
+      "name": "Cmd_Reset",
+      "tagType": "AtomicTag"
+    },
+    {
+      "Metadata": {
+        "shortDescription": "Target State",
+        "longDescription": ""
+      },
+      "valueSource": "opc",
+      "opcItemPath": {
+        "bindType": "parameter",
+        "binding": "ns=1;s=[{Device}]"
+      },
+      "opcServer": {
+        "bindType": "parameter",
+        "binding": "{Server}"
+      },
+      "dataType": "Boolean",
+      "documentation": "Global executive device control structure for this digital input (HOA, alarms, and system coordination).",
+      "name": "Cfg_TargetState",
+      "tagType": "AtomicTag"
+    },
+    {
+      "Metadata": {
+        "shortDescription": "Debounce Time",
+        "longDescription": ""
+      },
+      "valueSource": "opc",
+      "opcItemPath": {
+        "bindType": "parameter",
+        "binding": "ns=1;s=[{Device}]"
+      },
+      "opcServer": {
+        "bindType": "parameter",
+        "binding": "{Server}"
+      },
+      "dataType": "Float4",
+      "documentation": "Debounce time in milliseconds applied to the digital input On/Off transitions.",
+      "name": "Cfg_DB_TIME",
+      "tagType": "AtomicTag",
+      "engUnit": "ms"
+    },
+    {
+      "Metadata": {
+        "shortDescription": "Enable Raw Simulation",
+        "longDescription": ""
+      },
+      "valueSource": "opc",
+      "opcItemPath": {
+        "bindType": "parameter",
+        "binding": "ns=1;s=[{Device}]"
+      },
+      "opcServer": {
+        "bindType": "parameter",
+        "binding": "{Server}"
+      },
+      "dataType": "Boolean",
+      "documentation": "System index into global Exec.SysCtrl array for this digital input's alarms and status.",
+      "name": "Enable_SimRaw",
+      "tagType": "AtomicTag"
+    }
+  ],
+  "typeColor": -16777088
+}

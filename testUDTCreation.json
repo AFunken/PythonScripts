@@ -1,0 +1,45 @@
+{
+  "name": "TestUDT",
+  "tagType": "UdtType",
+  "parameters": {
+    "Device": {
+      "dataType": "String",
+      "value": "[Sample_Device]"
+    }
+  },
+  "tags": [
+    {
+      "alarms": [
+        {
+          "mode": "WhenTrue",
+          "name": "Alarm"
+        }
+      ],
+      "valueSource": "opc",
+      "dataType": "Boolean",
+      "documentation": "High Winding Temperature",
+      "name": "HI_WIND_TEMP",
+      "tagType": "AtomicTag",
+      "opcItemPath": {
+        "bindType": "parameter",
+        "binding": "ns=1;s=[{Device}]HR1"
+      },
+      "Metadata": {
+        "shortDescription": "High Winding Temperature",
+        "states": [
+          {
+            "label": "False",
+            "value": false
+          },
+          {
+            "label": "True",
+            "value": true
+          }
+        ]
+      },
+      "historyEnabled": "true",
+      "historySampleRateUnits": "MIN",
+      "historySampleRate": 5
+    }
+  ]
+}

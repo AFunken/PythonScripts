@@ -1,0 +1,547 @@
+{
+  "name": "BKR",
+  "tagType": "UdtType",
+  "parameters": {
+    "Device": {
+      "dataType": "String",
+      "value": ""
+    },
+    "Server": {
+      "dataType": "String",
+      "value": "Ignition OPC UA Server"
+    }
+  },
+  "tags": [
+    {
+      "alarms": [
+        {
+          "mode": "WhenTrue",
+          "name": "Alarm"
+        }
+      ],
+      "valueSource": "derived",
+      "dataType": "Boolean",
+      "documentation": "Breaker Disconnected",
+      "name": "BKR_DISC",
+      "tagType": "AtomicTag",
+      "Metadata": {
+        "shortDescription": "Breaker Disconnected",
+        "states": [
+          {
+            "label": "False",
+            "value": false
+          },
+          {
+            "label": "True",
+            "value": true
+          }
+        ]
+      }
+    },
+    {
+      "alarms": [
+        {
+          "mode": "WhenTrue",
+          "name": "Alarm"
+        }
+      ],
+      "valueSource": "opc",
+      "dataType": "Boolean",
+      "documentation": "Breaker Tripped",
+      "name": "BKR_TRP",
+      "tagType": "AtomicTag",
+      "opcItemPath": {
+        "bindType": "parameter",
+        "binding": "ns=1;s=[{Device}]IR40.3"
+      },
+      "Metadata": {
+        "shortDescription": "Breaker Tripped",
+        "states": [
+          {
+            "label": "False",
+            "value": false
+          },
+          {
+            "label": "True",
+            "value": true
+          }
+        ]
+      }
+    },
+    {
+      "valueSource": "opc",
+      "dataType": "Boolean",
+      "documentation": "Breaker Closed",
+      "name": "BKR_ZC",
+      "tagType": "AtomicTag",
+      "opcItemPath": {
+        "bindType": "parameter",
+        "binding": "ns=1;s=[{Device}]IR40"
+      },
+      "Metadata": {
+        "shortDescription": "Breaker Closed",
+        "states": [
+          {
+            "label": "Open",
+            "value": false
+          },
+          {
+            "label": "Closed",
+            "value": true
+          }
+        ]
+      }
+    },
+    {
+      "valueSource": "opc",
+      "dataType": "Boolean",
+      "documentation": "Breaker Open",
+      "name": "BKR_ZO",
+      "tagType": "AtomicTag",
+      "opcItemPath": {
+        "bindType": "parameter",
+        "binding": "ns=1;s=[{Device}]IR40.6"
+      },
+      "Metadata": {
+        "shortDescription": "Breaker Open",
+        "states": [
+          {
+            "label": "Closed",
+            "value": false
+          },
+          {
+            "label": "Open",
+            "value": true
+          }
+        ]
+      }
+    },
+    {
+      "alarms": [
+        {
+          "mode": "WhenTrue",
+          "name": "Alarm"
+        }
+      ],
+      "valueSource": "opc",
+      "dataType": "Boolean",
+      "documentation": "Common Alarm",
+      "name": "CMN_ALM",
+      "tagType": "AtomicTag",
+      "opcItemPath": {
+        "bindType": "parameter",
+        "binding": "ns=1;s=[{Device}]IR40.1"
+      },
+      "Metadata": {
+        "shortDescription": "Common Alarm",
+        "states": [
+          {
+            "label": "Normal",
+            "value": false
+          },
+          {
+            "label": "Alarm",
+            "value": true
+          }
+        ]
+      }
+    },
+    {
+      "alarms": [
+        {
+          "mode": "WhenTrue",
+          "name": "Alarm"
+        }
+      ],
+      "valueSource": "opc",
+      "dataType": "Boolean",
+      "documentation": "Fail Summary Alarm",
+      "name": "FAIL_SMRY_ALM",
+      "tagType": "AtomicTag",
+      "opcItemPath": {
+        "bindType": "parameter",
+        "binding": "ns=1;s=[{Device}]IR40.7"
+      },
+      "Metadata": {
+        "shortDescription": "Fail Summary Alarm",
+        "states": [
+          {
+            "label": "Normal",
+            "value": false
+          },
+          {
+            "label": "Alarm",
+            "value": true
+          }
+        ]
+      }
+    },
+    {
+      "valueSource": "opc",
+      "dataType": "Int2",
+      "documentation": "Frequency",
+      "name": "FREQ",
+      "tagType": "AtomicTag",
+      "engUnit": "Hz",
+      "opcItemPath": {
+        "bindType": "parameter",
+        "binding": "ns=1;s=[{Device}]IR254"
+      },
+      "Metadata": {
+        "shortDescription": "Frequency"
+      },
+      "historyEnabled": "true",
+      "historySampleRateUnits": "MIN",
+      "historySampleRate": 5
+    },
+    {
+      "valueSource": "opc",
+      "dataType": "Float4",
+      "documentation": "Current A",
+      "name": "I_A",
+      "tagType": "AtomicTag",
+      "engUnit": "A",
+      "opcItemPath": {
+        "bindType": "parameter",
+        "binding": "ns=1;s=[{Device}]IR170"
+      },
+      "Metadata": {
+        "shortDescription": "Current A"
+      },
+      "historyEnabled": "true",
+      "historySampleRateUnits": "MIN",
+      "historySampleRate": 5
+    },
+    {
+      "valueSource": "opc",
+      "dataType": "Float4",
+      "documentation": "Current B",
+      "name": "I_B",
+      "tagType": "AtomicTag",
+      "engUnit": "A",
+      "opcItemPath": {
+        "bindType": "parameter",
+        "binding": "ns=1;s=[{Device}]IR172"
+      },
+      "Metadata": {
+        "shortDescription": "Current B"
+      },
+      "historyEnabled": "true",
+      "historySampleRateUnits": "MIN",
+      "historySampleRate": 5
+    },
+    {
+      "valueSource": "opc",
+      "dataType": "Float4",
+      "documentation": "Current C",
+      "name": "I_C",
+      "tagType": "AtomicTag",
+      "engUnit": "A",
+      "opcItemPath": {
+        "bindType": "parameter",
+        "binding": "ns=1;s=[{Device}]IR174"
+      },
+      "Metadata": {
+        "shortDescription": "Current C"
+      },
+      "historyEnabled": "true",
+      "historySampleRateUnits": "MIN",
+      "historySampleRate": 5
+    },
+    {
+      "valueSource": "opc",
+      "dataType": "Float4",
+      "documentation": "kVA",
+      "name": "KVA",
+      "tagType": "AtomicTag",
+      "engUnit": "kVA",
+      "opcItemPath": {
+        "bindType": "parameter",
+        "binding": "ns=1;s=[{Device}]IR246"
+      },
+      "Metadata": {
+        "shortDescription": "kVA"
+      },
+      "historyEnabled": "true",
+      "historySampleRateUnits": "MIN",
+      "historySampleRate": 5
+    },
+    {
+      "valueSource": "opc",
+      "dataType": "Float4",
+      "documentation": "kVAR",
+      "name": "KVAR",
+      "tagType": "AtomicTag",
+      "engUnit": "kVAR",
+      "opcItemPath": {
+        "bindType": "parameter",
+        "binding": "ns=1;s=[{Device}]IR238"
+      },
+      "Metadata": {
+        "shortDescription": "kVAR"
+      },
+      "historyEnabled": "true",
+      "historySampleRateUnits": "MIN",
+      "historySampleRate": 5
+    },
+    {
+      "valueSource": "opc",
+      "dataType": "Float4",
+      "documentation": "kW",
+      "name": "KW",
+      "tagType": "AtomicTag",
+      "engUnit": "kW",
+      "opcItemPath": {
+        "bindType": "parameter",
+        "binding": "ns=1;s=[{Device}]IR230"
+      },
+      "Metadata": {
+        "shortDescription": "kW"
+      },
+      "historyEnabled": "true",
+      "historySampleRateUnits": "MIN",
+      "historySampleRate": 5
+    },
+    {
+      "valueSource": "opc",
+      "dataType": "Float4",
+      "documentation": "Kilowatt Hours",
+      "name": "KWH",
+      "tagType": "AtomicTag",
+      "engUnit": "kWh",
+      "opcItemPath": {
+        "bindType": "parameter",
+        "binding": "ns=1;s=[{Device}]IR316"
+      },
+      "Metadata": {
+        "shortDescription": "Kilowatt Hours"
+      },
+      "historyEnabled": "true",
+      "historySampleRateUnits": "MIN",
+      "historySampleRate": 5
+    },
+    {
+      "valueSource": "opc",
+      "dataType": "Float4",
+      "documentation": "Maximum Current A",
+      "name": "MAX_I_A",
+      "tagType": "AtomicTag",
+      "engUnit": "A",
+      "opcItemPath": {
+        "bindType": "parameter",
+        "binding": "ns=1;s=[{Device}]IR120"
+      },
+      "Metadata": {
+        "shortDescription": "Maximum Current A"
+      },
+      "historyEnabled": "true",
+      "historySampleRateUnits": "MIN",
+      "historySampleRate": 5
+    },
+    {
+      "valueSource": "opc",
+      "dataType": "Float4",
+      "documentation": "Maximum Current B",
+      "name": "MAX_I_B",
+      "tagType": "AtomicTag",
+      "engUnit": "A",
+      "opcItemPath": {
+        "bindType": "parameter",
+        "binding": "ns=1;s=[{Device}]IR128"
+      },
+      "Metadata": {
+        "shortDescription": "Maximum Current B"
+      },
+      "historyEnabled": "true",
+      "historySampleRateUnits": "MIN",
+      "historySampleRate": 5
+    },
+    {
+      "valueSource": "opc",
+      "dataType": "Float4",
+      "documentation": "Maximum Current C",
+      "name": "MAX_I_C",
+      "tagType": "AtomicTag",
+      "engUnit": "A",
+      "opcItemPath": {
+        "bindType": "parameter",
+        "binding": "ns=1;s=[{Device}]IR136"
+      },
+      "Metadata": {
+        "shortDescription": "Maximum Current C"
+      },
+      "historyEnabled": "true",
+      "historySampleRateUnits": "MIN",
+      "historySampleRate": 5
+    },
+    {
+      "valueSource": "opc",
+      "dataType": "Float4",
+      "documentation": "Minimum Current A",
+      "name": "MIN_I_A",
+      "tagType": "AtomicTag",
+      "engUnit": "A",
+      "opcItemPath": {
+        "bindType": "parameter",
+        "binding": "ns=1;s=[{Device}]IR116"
+      },
+      "Metadata": {
+        "shortDescription": "Minimum Current A"
+      },
+      "historyEnabled": "true",
+      "historySampleRateUnits": "MIN",
+      "historySampleRate": 5
+    },
+    {
+      "valueSource": "opc",
+      "dataType": "Float4",
+      "documentation": "Minimum Current B",
+      "name": "MIN_I_B",
+      "tagType": "AtomicTag",
+      "engUnit": "A",
+      "opcItemPath": {
+        "bindType": "parameter",
+        "binding": "ns=1;s=[{Device}]IR124"
+      },
+      "Metadata": {
+        "shortDescription": "Minimum Current B"
+      },
+      "historyEnabled": "true",
+      "historySampleRateUnits": "MIN",
+      "historySampleRate": 5
+    },
+    {
+      "valueSource": "opc",
+      "dataType": "Float4",
+      "documentation": "Minimum Current C",
+      "name": "MIN_I_C",
+      "tagType": "AtomicTag",
+      "engUnit": "A",
+      "opcItemPath": {
+        "bindType": "parameter",
+        "binding": "ns=1;s=[{Device}]IR132"
+      },
+      "Metadata": {
+        "shortDescription": "Minimum Current C"
+      },
+      "historyEnabled": "true",
+      "historySampleRateUnits": "MIN",
+      "historySampleRate": 5
+    },
+    {
+      "valueSource": "opc",
+      "dataType": "Float4",
+      "documentation": "Power Factor",
+      "name": "PF",
+      "tagType": "AtomicTag",
+      "opcItemPath": {
+        "bindType": "parameter",
+        "binding": "ns=1;s=[{Device}]IR184"
+      },
+      "Metadata": {
+        "shortDescription": "Power Factor"
+      },
+      "historyEnabled": "true",
+      "historySampleRateUnits": "MIN",
+      "historySampleRate": 5
+    },
+    {
+      "valueSource": "opc",
+      "dataType": "Int2",
+      "documentation": "Total Current Harmonics (%THD)",
+      "name": "THD_I",
+      "tagType": "AtomicTag",
+      "opcItemPath": {
+        "bindType": "parameter",
+        "binding": "ns=1;s=[{Device}]IR350"
+      },
+      "Metadata": {
+        "shortDescription": "Total Current Harmonics (%THD)"
+      }
+    },
+    {
+      "valueSource": "opc",
+      "dataType": "Float4",
+      "documentation": "Voltage AB",
+      "name": "V_AB",
+      "tagType": "AtomicTag",
+      "engUnit": "V",
+      "opcItemPath": {
+        "bindType": "parameter",
+        "binding": "ns=1;s=[{Device}]IR192"
+      },
+      "Metadata": {
+        "shortDescription": "Voltage AB"
+      },
+      "historyEnabled": "true",
+      "historySampleRateUnits": "MIN",
+      "historySampleRate": 5
+    },
+    {
+      "valueSource": "opc",
+      "dataType": "Float4",
+      "documentation": "Voltage BC",
+      "name": "V_BC",
+      "tagType": "AtomicTag",
+      "engUnit": "V",
+      "opcItemPath": {
+        "bindType": "parameter",
+        "binding": "ns=1;s=[{Device}]IR194"
+      },
+      "Metadata": {
+        "shortDescription": "Voltage BC"
+      },
+      "historyEnabled": "true",
+      "historySampleRateUnits": "MIN",
+      "historySampleRate": 5
+    },
+    {
+      "valueSource": "opc",
+      "dataType": "Float4",
+      "documentation": "Voltage CA",
+      "name": "V_CA",
+      "tagType": "AtomicTag",
+      "engUnit": "V",
+      "opcItemPath": {
+        "bindType": "parameter",
+        "binding": "ns=1;s=[{Device}]IR196"
+      },
+      "Metadata": {
+        "shortDescription": "Voltage CA"
+      },
+      "historyEnabled": "true",
+      "historySampleRateUnits": "MIN",
+      "historySampleRate": 5
+    },
+    {
+      "alarms": [
+        {
+          "mode": "WhenTrue",
+          "name": "Alarm"
+        }
+      ],
+      "valueSource": "opc",
+      "dataType": "Boolean",
+      "documentation": "Warning Summary Alarm",
+      "name": "WRN_SMRY_ALM",
+      "tagType": "AtomicTag",
+      "opcItemPath": {
+        "bindType": "parameter",
+        "binding": "ns=1;s=[{Device}]IR40.9"
+      },
+      "Metadata": {
+        "shortDescription": "Warning Summary Alarm",
+        "states": [
+          {
+            "label": "Normal",
+            "value": false
+          },
+          {
+            "label": "Alarm",
+            "value": true
+          }
+        ]
+      }
+    }
+  ]
+}

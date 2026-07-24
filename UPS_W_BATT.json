@@ -1,0 +1,1671 @@
+{
+  "name": "UPS_W_BATT",
+  "tagType": "UdtType",
+  "parameters": {
+    "Device": {
+      "dataType": "String",
+      "value": "[Sample_Device]"
+    }
+  },
+  "tags": [
+    {
+      "valueSource": "opc",
+      "dataType": "Int2",
+      "documentation": "Accumulative Battery Time",
+      "name": "ACCUM_BATT_TIME",
+      "tagType": "AtomicTag",
+      "engUnit": "hrs",
+      "opcItemPath": {
+        "bindType": "parameter",
+        "binding": "ns=1;s=[{Device}]IR191"
+      },
+      "Metadata": {
+        "shortDescription": "Accumulative Battery Time"
+      },
+      "historyEnabled": "true",
+      "historySampleRateUnits": "MIN",
+      "historySampleRate": 5
+    },
+    {
+      "alarms": [
+        {
+          "mode": "WhenTrue",
+          "name": "Alarm"
+        }
+      ],
+      "valueSource": "opc",
+      "dataType": "Boolean",
+      "documentation": "Ambient Over Temperature",
+      "name": "AMB_OVR_TEMP",
+      "tagType": "AtomicTag",
+      "opcItemPath": {
+        "bindType": "parameter",
+        "binding": "ns=1;s=[{Device}]C283"
+      },
+      "Metadata": {
+        "shortDescription": "Ambient Over Temperature",
+        "states": [
+          {
+            "label": "Normal",
+            "value": false
+          },
+          {
+            "label": "Alarm",
+            "value": true
+          }
+        ]
+      }
+    },
+    {
+      "valueSource": "opc",
+      "dataType": "Int2",
+      "documentation": "Battery Amps",
+      "name": "BATT_AMP",
+      "tagType": "AtomicTag",
+      "engUnit": "A",
+      "opcItemPath": {
+        "bindType": "parameter",
+        "binding": "ns=1;s=[{Device}]IR201"
+      },
+      "Metadata": {
+        "shortDescription": "Battery Amps"
+      },
+      "historyEnabled": "true",
+      "historySampleRateUnits": "MIN",
+      "historySampleRate": 5
+    },
+    {
+      "alarms": [
+        {
+          "mode": "WhenTrue",
+          "name": "Alarm"
+        }
+      ],
+      "valueSource": "opc",
+      "dataType": "Boolean",
+      "documentation": "Battery Charge Inhibit",
+      "name": "BATT_CHRG_INHB",
+      "tagType": "AtomicTag",
+      "opcItemPath": {
+        "bindType": "parameter",
+        "binding": "ns=1;s=[{Device}]C272"
+      },
+      "Metadata": {
+        "shortDescription": "Battery Charge Inhibit",
+        "states": [
+          {
+            "label": "Normal",
+            "value": false
+          },
+          {
+            "label": "Alarm",
+            "value": true
+          }
+        ]
+      }
+    },
+    {
+      "valueSource": "opc",
+      "dataType": "Int2",
+      "documentation": "Battery Charge Percent",
+      "name": "BATT_CHRG_PCT",
+      "tagType": "AtomicTag",
+      "engUnit": "%",
+      "opcItemPath": {
+        "bindType": "parameter",
+        "binding": "ns=1;s=[{Device}]IR188"
+      },
+      "Metadata": {
+        "shortDescription": "Battery Charge Percent"
+      },
+      "historyEnabled": "true",
+      "historySampleRateUnits": "MIN",
+      "historySampleRate": 5
+    },
+    {
+      "alarms": [
+        {
+          "mode": "WhenTrue",
+          "name": "Alarm"
+        }
+      ],
+      "valueSource": "opc",
+      "dataType": "Boolean",
+      "documentation": "Battery Disconnect Alarm",
+      "name": "BATT_DISC_ALM",
+      "tagType": "AtomicTag",
+      "opcItemPath": {
+        "bindType": "parameter",
+        "binding": "ns=1;s=[{Device}]C273"
+      },
+      "Metadata": {
+        "shortDescription": "Battery Disconnect Alarm",
+        "states": [
+          {
+            "label": "Normal",
+            "value": false
+          },
+          {
+            "label": "Alarm",
+            "value": true
+          }
+        ]
+      }
+    },
+    {
+      "valueSource": "opc",
+      "dataType": "Int2",
+      "documentation": "Battery Is",
+      "name": "BATT_IS",
+      "tagType": "AtomicTag",
+      "opcItemPath": {
+        "bindType": "parameter",
+        "binding": "ns=1;s=[{Device}]IR193"
+      },
+      "Metadata": {
+        "shortDescription": "Battery Is",
+        "states": [
+          {
+            "label": "Fully Charged",
+            "value": false
+          },
+          {
+            "label": "Charging",
+            "value": true
+          },
+          {
+            "label": "Discharging",
+            "value": "2"
+          },
+          {
+            "label": "Charger Off",
+            "value": "3"
+          }
+        ]
+      }
+    },
+    {
+      "alarms": [
+        {
+          "mode": "WhenTrue",
+          "name": "Alarm"
+        }
+      ],
+      "valueSource": "opc",
+      "dataType": "Int2",
+      "documentation": "Battery Status",
+      "name": "BATT_STS",
+      "tagType": "AtomicTag",
+      "opcItemPath": {
+        "bindType": "parameter",
+        "binding": "ns=1;s=[{Device}]IR192"
+      },
+      "Metadata": {
+        "shortDescription": "Battery Status",
+        "states": [
+          {
+            "label": "Unknown",
+            "value": false
+          },
+          {
+            "label": "Normal",
+            "value": true
+          },
+          {
+            "label": "Low",
+            "value": "2"
+          },
+          {
+            "label": "Depleted",
+            "value": "3"
+          }
+        ]
+      }
+    },
+    {
+      "valueSource": "opc",
+      "dataType": "Int2",
+      "documentation": "Battery Temperature",
+      "name": "BATT_TEMP",
+      "tagType": "AtomicTag",
+      "engUnit": "°C",
+      "opcItemPath": {
+        "bindType": "parameter",
+        "binding": "ns=1;s=[{Device}]IR187"
+      },
+      "Metadata": {
+        "shortDescription": "Battery Temperature"
+      }
+    },
+    {
+      "valueSource": "opc",
+      "dataType": "Int2",
+      "documentation": "Battery Time Remaining",
+      "name": "BATT_TIME_REM",
+      "tagType": "AtomicTag",
+      "engUnit": "min",
+      "opcItemPath": {
+        "bindType": "parameter",
+        "binding": "ns=1;s=[{Device}]IR189"
+      },
+      "Metadata": {
+        "shortDescription": "Battery Time Remaining"
+      }
+    },
+    {
+      "valueSource": "opc",
+      "dataType": "Int2",
+      "documentation": "Main Battery Circuit Breaker Status",
+      "name": "BCB_STS",
+      "tagType": "AtomicTag",
+      "opcItemPath": {
+        "bindType": "parameter",
+        "binding": "ns=1;s=[{Device}]IR181"
+      },
+      "Metadata": {
+        "shortDescription": "Main Battery Circuit Breaker Status",
+        "states": [
+          {
+            "label": "Open",
+            "value": false
+          },
+          {
+            "label": "Closed",
+            "value": true
+          },
+          {
+            "label": "Not Installed",
+            "value": "2"
+          }
+        ]
+      }
+    },
+    {
+      "valueSource": "opc",
+      "dataType": "Int2",
+      "documentation": "Bypass Isolation Breaker Status",
+      "name": "BFB_STS",
+      "tagType": "AtomicTag",
+      "opcItemPath": {
+        "bindType": "parameter",
+        "binding": "ns=1;s=[{Device}]IR36"
+      },
+      "Metadata": {
+        "shortDescription": "Bypass Isolation Breaker Status",
+        "states": [
+          {
+            "label": "Open",
+            "value": false
+          },
+          {
+            "label": "Closed",
+            "value": true
+          },
+          {
+            "label": "Not Installed",
+            "value": "2"
+          }
+        ]
+      }
+    },
+    {
+      "alarms": [
+        {
+          "mode": "WhenTrue",
+          "name": "Alarm"
+        }
+      ],
+      "valueSource": "opc",
+      "dataType": "Boolean",
+      "documentation": "Blower Fan Failure",
+      "name": "BLO_FAN_FAIL",
+      "tagType": "AtomicTag",
+      "opcItemPath": {
+        "bindType": "parameter",
+        "binding": "ns=1;s=[{Device}]C259"
+      },
+      "Metadata": {
+        "shortDescription": "Blower Fan Failure",
+        "states": [
+          {
+            "label": "Normal",
+            "value": false
+          },
+          {
+            "label": "Alarm",
+            "value": true
+          }
+        ]
+      }
+    },
+    {
+      "alarms": [
+        {
+          "mode": "WhenTrue",
+          "name": "Alarm"
+        }
+      ],
+      "valueSource": "opc",
+      "dataType": "Boolean",
+      "documentation": "Bypass Not Available",
+      "name": "BYP_NOT_AVBL",
+      "tagType": "AtomicTag",
+      "opcItemPath": {
+        "bindType": "parameter",
+        "binding": "ns=1;s=[{Device}]C25"
+      },
+      "Metadata": {
+        "shortDescription": "Bypass Not Available",
+        "states": [
+          {
+            "label": "Normal",
+            "value": false
+          },
+          {
+            "label": "Alarm",
+            "value": true
+          }
+        ]
+      }
+    },
+    {
+      "valueSource": "opc",
+      "dataType": "Int2",
+      "documentation": "Charger 1 Status",
+      "name": "CHGR_01_STS",
+      "tagType": "AtomicTag",
+      "opcItemPath": {
+        "bindType": "parameter",
+        "binding": "ns=1;s=[{Device}]IR134"
+      },
+      "Metadata": {
+        "shortDescription": "Charger 1 Status",
+        "states": [
+          {
+            "label": "Off",
+            "value": false
+          },
+          {
+            "label": "On",
+            "value": true
+          }
+        ]
+      }
+    },
+    {
+      "alarms": [
+        {
+          "mode": "WhenTrue",
+          "name": "Alarm"
+        }
+      ],
+      "valueSource": "opc",
+      "dataType": "Int2",
+      "documentation": "Common Alarm",
+      "name": "CMN_ALM",
+      "tagType": "AtomicTag",
+      "opcItemPath": {
+        "bindType": "parameter",
+        "binding": "ns=1;s=[{Device}]IR169"
+      },
+      "Metadata": {
+        "shortDescription": "Common Alarm",
+        "states": [
+          {
+            "label": "Normal",
+            "value": false
+          },
+          {
+            "label": "Alarm",
+            "value": true
+          }
+        ]
+      }
+    },
+    {
+      "alarms": [
+        {
+          "mode": "WhenTrue",
+          "name": "Alarm"
+        }
+      ],
+      "valueSource": "opc",
+      "dataType": "Boolean",
+      "documentation": "Control Power Failure",
+      "name": "CTRL_PWR_FAIL",
+      "tagType": "AtomicTag",
+      "opcItemPath": {
+        "bindType": "parameter",
+        "binding": "ns=1;s=[{Device}]C17"
+      },
+      "Metadata": {
+        "shortDescription": "Control Power Failure",
+        "states": [
+          {
+            "label": "Normal",
+            "value": false
+          },
+          {
+            "label": "Alarm",
+            "value": true
+          }
+        ]
+      }
+    },
+    {
+      "alarms": [
+        {
+          "mode": "WhenTrue",
+          "name": "Alarm"
+        }
+      ],
+      "valueSource": "opc",
+      "dataType": "Boolean",
+      "documentation": "DC Bus Abnormal",
+      "name": "DC_BUS_ABN",
+      "tagType": "AtomicTag",
+      "opcItemPath": {
+        "bindType": "parameter",
+        "binding": "ns=1;s=[{Device}]C121"
+      },
+      "Metadata": {
+        "shortDescription": "DC Bus Abnormal",
+        "states": [
+          {
+            "label": "Normal",
+            "value": false
+          },
+          {
+            "label": "Alarm",
+            "value": true
+          }
+        ]
+      }
+    },
+    {
+      "alarms": [
+        {
+          "mode": "WhenTrue",
+          "name": "Alarm"
+        }
+      ],
+      "valueSource": "opc",
+      "dataType": "Boolean",
+      "documentation": "DC Bus Failure",
+      "name": "DC_BUS_FAIL",
+      "tagType": "AtomicTag",
+      "opcItemPath": {
+        "bindType": "parameter",
+        "binding": "ns=1;s=[{Device}]C122"
+      },
+      "Metadata": {
+        "shortDescription": "DC Bus Failure",
+        "states": [
+          {
+            "label": "Normal",
+            "value": false
+          },
+          {
+            "label": "Alarm",
+            "value": true
+          }
+        ]
+      }
+    },
+    {
+      "valueSource": "opc",
+      "dataType": "Int2",
+      "documentation": "DC Bus Current",
+      "name": "DC_BUS_I",
+      "tagType": "AtomicTag",
+      "engUnit": "A",
+      "opcItemPath": {
+        "bindType": "parameter",
+        "binding": "ns=1;s=[{Device}]IR185"
+      },
+      "Metadata": {
+        "shortDescription": "DC Bus Current"
+      },
+      "historyEnabled": "true",
+      "historySampleRateUnits": "MIN",
+      "historySampleRate": 5
+    },
+    {
+      "valueSource": "opc",
+      "dataType": "Int2",
+      "documentation": "DC Bus Voltage",
+      "name": "DC_BUS_V",
+      "tagType": "AtomicTag",
+      "engUnit": "V",
+      "opcItemPath": {
+        "bindType": "parameter",
+        "binding": "ns=1;s=[{Device}]IR184"
+      },
+      "Metadata": {
+        "shortDescription": "DC Bus Voltage"
+      },
+      "historyEnabled": "true",
+      "historySampleRateUnits": "MIN",
+      "historySampleRate": 5
+    },
+    {
+      "alarms": [
+        {
+          "mode": "WhenTrue",
+          "name": "Alarm"
+        }
+      ],
+      "valueSource": "opc",
+      "dataType": "Boolean",
+      "documentation": "DC Ground Fault",
+      "name": "DC_GND_FLT",
+      "tagType": "AtomicTag",
+      "opcItemPath": {
+        "bindType": "parameter",
+        "binding": "ns=1;s=[{Device}]C258"
+      },
+      "Metadata": {
+        "shortDescription": "DC Ground Fault",
+        "states": [
+          {
+            "label": "Normal",
+            "value": false
+          },
+          {
+            "label": "Alarm",
+            "value": true
+          }
+        ]
+      }
+    },
+    {
+      "valueSource": "opc",
+      "dataType": "Int2",
+      "documentation": "Discharger 1 Status",
+      "name": "DSCHGR_01_STS",
+      "tagType": "AtomicTag",
+      "opcItemPath": {
+        "bindType": "parameter",
+        "binding": "ns=1;s=[{Device}]IR144"
+      },
+      "Metadata": {
+        "shortDescription": "Discharger 1 Status",
+        "states": [
+          {
+            "label": "Off",
+            "value": false
+          },
+          {
+            "label": "On",
+            "value": true
+          }
+        ]
+      }
+    },
+    {
+      "alarms": [
+        {
+          "mode": "WhenTrue",
+          "name": "Alarm"
+        }
+      ],
+      "valueSource": "opc",
+      "dataType": "Boolean",
+      "documentation": "Emergency Power Off",
+      "name": "EMER_PWR_OFF",
+      "tagType": "AtomicTag",
+      "opcItemPath": {
+        "bindType": "parameter",
+        "binding": "ns=1;s=[{Device}]C256"
+      },
+      "Metadata": {
+        "shortDescription": "Emergency Power Off",
+        "states": [
+          {
+            "label": "Normal",
+            "value": false
+          },
+          {
+            "label": "Alarm",
+            "value": true
+          }
+        ]
+      }
+    },
+    {
+      "alarms": [
+        {
+          "mode": "WhenTrue",
+          "name": "Alarm"
+        }
+      ],
+      "valueSource": "opc",
+      "dataType": "Boolean",
+      "documentation": "Equipment Over Temperature",
+      "name": "EQUIP_OVR_TEMP",
+      "tagType": "AtomicTag",
+      "opcItemPath": {
+        "bindType": "parameter",
+        "binding": "ns=1;s=[{Device}]C252"
+      },
+      "Metadata": {
+        "shortDescription": "Equipment Over Temperature",
+        "states": [
+          {
+            "label": "Normal",
+            "value": false
+          },
+          {
+            "label": "Alarm",
+            "value": true
+          }
+        ]
+      }
+    },
+    {
+      "valueSource": "opc",
+      "dataType": "Int2",
+      "documentation": "Current In A",
+      "name": "I_IN_A",
+      "tagType": "AtomicTag",
+      "engUnit": "A",
+      "opcItemPath": {
+        "bindType": "parameter",
+        "binding": "ns=1;s=[{Device}]IR7"
+      },
+      "Metadata": {
+        "shortDescription": "Current In A"
+      },
+      "historyEnabled": "true",
+      "historySampleRateUnits": "MIN",
+      "historySampleRate": 5
+    },
+    {
+      "valueSource": "opc",
+      "dataType": "Int2",
+      "documentation": "Current In B",
+      "name": "I_IN_B",
+      "tagType": "AtomicTag",
+      "engUnit": "A",
+      "opcItemPath": {
+        "bindType": "parameter",
+        "binding": "ns=1;s=[{Device}]IR8"
+      },
+      "Metadata": {
+        "shortDescription": "Current In B"
+      },
+      "historyEnabled": "true",
+      "historySampleRateUnits": "MIN",
+      "historySampleRate": 5
+    },
+    {
+      "valueSource": "opc",
+      "dataType": "Int2",
+      "documentation": "Current In C",
+      "name": "I_IN_C",
+      "tagType": "AtomicTag",
+      "engUnit": "A",
+      "opcItemPath": {
+        "bindType": "parameter",
+        "binding": "ns=1;s=[{Device}]IR9"
+      },
+      "Metadata": {
+        "shortDescription": "Current In C"
+      },
+      "historyEnabled": "true",
+      "historySampleRateUnits": "MIN",
+      "historySampleRate": 5
+    },
+    {
+      "valueSource": "opc",
+      "dataType": "Int2",
+      "documentation": "Current Out A",
+      "name": "I_OUT_A",
+      "tagType": "AtomicTag",
+      "engUnit": "A",
+      "opcItemPath": {
+        "bindType": "parameter",
+        "binding": "ns=1;s=[{Device}]IR44"
+      },
+      "Metadata": {
+        "shortDescription": "Current Out A"
+      },
+      "historyEnabled": "true",
+      "historySampleRateUnits": "MIN",
+      "historySampleRate": 5
+    },
+    {
+      "valueSource": "opc",
+      "dataType": "Int2",
+      "documentation": "Current Out B",
+      "name": "I_OUT_B",
+      "tagType": "AtomicTag",
+      "engUnit": "A",
+      "opcItemPath": {
+        "bindType": "parameter",
+        "binding": "ns=1;s=[{Device}]IR45"
+      },
+      "Metadata": {
+        "shortDescription": "Current Out B"
+      },
+      "historyEnabled": "true",
+      "historySampleRateUnits": "MIN",
+      "historySampleRate": 5
+    },
+    {
+      "valueSource": "opc",
+      "dataType": "Int2",
+      "documentation": "Current Out C",
+      "name": "I_OUT_C",
+      "tagType": "AtomicTag",
+      "engUnit": "A",
+      "opcItemPath": {
+        "bindType": "parameter",
+        "binding": "ns=1;s=[{Device}]IR46"
+      },
+      "Metadata": {
+        "shortDescription": "Current Out C"
+      },
+      "historyEnabled": "true",
+      "historySampleRateUnits": "MIN",
+      "historySampleRate": 5
+    },
+    {
+      "alarms": [
+        {
+          "mode": "WhenTrue",
+          "name": "Alarm"
+        }
+      ],
+      "valueSource": "opc",
+      "dataType": "Boolean",
+      "documentation": "Input Failure",
+      "name": "INP_FAIL",
+      "tagType": "AtomicTag",
+      "opcItemPath": {
+        "bindType": "parameter",
+        "binding": "ns=1;s=[{Device}]C3"
+      },
+      "Metadata": {
+        "shortDescription": "Input Failure",
+        "states": [
+          {
+            "label": "Normal",
+            "value": false
+          },
+          {
+            "label": "Alarm",
+            "value": true
+          }
+        ]
+      }
+    },
+    {
+      "valueSource": "opc",
+      "dataType": "Int2",
+      "documentation": "Input Frequency",
+      "name": "INP_FREQ",
+      "tagType": "AtomicTag",
+      "engUnit": "Hz",
+      "opcItemPath": {
+        "bindType": "parameter",
+        "binding": "ns=1;s=[{Device}]IR10"
+      },
+      "Metadata": {
+        "shortDescription": "Input Frequency"
+      }
+    },
+    {
+      "alarms": [
+        {
+          "mode": "WhenTrue",
+          "name": "Alarm"
+        }
+      ],
+      "valueSource": "opc",
+      "dataType": "Boolean",
+      "documentation": "Input Current Imbalance",
+      "name": "INP_I_IMBAL",
+      "tagType": "AtomicTag",
+      "opcItemPath": {
+        "bindType": "parameter",
+        "binding": "ns=1;s=[{Device}]C91"
+      },
+      "Metadata": {
+        "shortDescription": "Input Current Imbalance",
+        "states": [
+          {
+            "label": "Normal",
+            "value": false
+          },
+          {
+            "label": "Alarm",
+            "value": true
+          }
+        ]
+      }
+    },
+    {
+      "valueSource": "opc",
+      "dataType": "Int2",
+      "documentation": "Inverter 1 Status",
+      "name": "INVRT_01_STS",
+      "tagType": "AtomicTag",
+      "opcItemPath": {
+        "bindType": "parameter",
+        "binding": "ns=1;s=[{Device}]IR124"
+      },
+      "Metadata": {
+        "shortDescription": "Inverter 1 Status",
+        "states": [
+          {
+            "label": "Off",
+            "value": false
+          },
+          {
+            "label": "On",
+            "value": true
+          }
+        ]
+      }
+    },
+    {
+      "alarms": [
+        {
+          "mode": "WhenTrue",
+          "name": "Alarm"
+        }
+      ],
+      "valueSource": "opc",
+      "dataType": "Boolean",
+      "documentation": "Inverter Fault",
+      "name": "INVRT_FLT",
+      "tagType": "AtomicTag",
+      "opcItemPath": {
+        "bindType": "parameter",
+        "binding": "ns=1;s=[{Device}]C142"
+      },
+      "Metadata": {
+        "shortDescription": "Inverter Fault",
+        "states": [
+          {
+            "label": "Normal",
+            "value": false
+          },
+          {
+            "label": "Alarm",
+            "value": true
+          }
+        ]
+      }
+    },
+    {
+      "alarms": [
+        {
+          "mode": "WhenTrue",
+          "name": "Alarm"
+        }
+      ],
+      "valueSource": "opc",
+      "dataType": "Boolean",
+      "documentation": "Inverter Not In Sync",
+      "name": "INVRT_NOT_IN_SYNC",
+      "tagType": "AtomicTag",
+      "opcItemPath": {
+        "bindType": "parameter",
+        "binding": "ns=1;s=[{Device}]C144"
+      },
+      "Metadata": {
+        "shortDescription": "Inverter Not In Sync",
+        "states": [
+          {
+            "label": "Normal",
+            "value": false
+          },
+          {
+            "label": "Alarm",
+            "value": true
+          }
+        ]
+      }
+    },
+    {
+      "alarms": [
+        {
+          "mode": "WhenTrue",
+          "name": "Alarm"
+        }
+      ],
+      "valueSource": "opc",
+      "dataType": "Boolean",
+      "documentation": "Low Battery Alarm",
+      "name": "LOW_BATT_ALM",
+      "tagType": "AtomicTag",
+      "opcItemPath": {
+        "bindType": "parameter",
+        "binding": "ns=1;s=[{Device}]C277"
+      },
+      "Metadata": {
+        "shortDescription": "Low Battery Alarm",
+        "states": [
+          {
+            "label": "Normal",
+            "value": false
+          },
+          {
+            "label": "Alarm",
+            "value": true
+          }
+        ]
+      }
+    },
+    {
+      "valueSource": "opc",
+      "dataType": "Int2",
+      "documentation": "Maintenance Bypass Breaker Status",
+      "name": "MBB_STS",
+      "tagType": "AtomicTag",
+      "opcItemPath": {
+        "bindType": "parameter",
+        "binding": "ns=1;s=[{Device}]IR37"
+      },
+      "Metadata": {
+        "shortDescription": "Maintenance Bypass Breaker Status",
+        "states": [
+          {
+            "label": "Open",
+            "value": false
+          },
+          {
+            "label": "Closed",
+            "value": true
+          },
+          {
+            "label": "Not Installed",
+            "value": "2"
+          }
+        ]
+      }
+    },
+    {
+      "valueSource": "opc",
+      "dataType": "Int2",
+      "documentation": "Maintenance Isolation Breaker Status",
+      "name": "MIB_STS",
+      "tagType": "AtomicTag",
+      "opcItemPath": {
+        "bindType": "parameter",
+        "binding": "ns=1;s=[{Device}]IR69"
+      },
+      "Metadata": {
+        "shortDescription": "Maintenance Isolation Breaker Status",
+        "states": [
+          {
+            "label": "Open",
+            "value": false
+          },
+          {
+            "label": "Closed",
+            "value": true
+          },
+          {
+            "label": "Not Installed",
+            "value": "2"
+          }
+        ]
+      }
+    },
+    {
+      "valueSource": "opc",
+      "dataType": "Int2",
+      "documentation": "Mode",
+      "name": "MODE",
+      "tagType": "AtomicTag",
+      "opcItemPath": {
+        "bindType": "parameter",
+        "binding": "ns=1;s=[{Device}]IR166"
+      },
+      "Metadata": {
+        "shortDescription": "Mode"
+      }
+    },
+    {
+      "valueSource": "opc",
+      "dataType": "Int2",
+      "documentation": "Module Output Breaker Status",
+      "name": "OUT_BKR_STS",
+      "tagType": "AtomicTag",
+      "opcItemPath": {
+        "bindType": "parameter",
+        "binding": "ns=1;s=[{Device}]IR68"
+      },
+      "Metadata": {
+        "shortDescription": "Module Output Breaker Status",
+        "states": [
+          {
+            "label": "Open",
+            "value": false
+          },
+          {
+            "label": "Closed",
+            "value": true
+          },
+          {
+            "label": "Not Installed",
+            "value": "2"
+          }
+        ]
+      }
+    },
+    {
+      "valueSource": "opc",
+      "dataType": "Int2",
+      "documentation": "Output Frequency",
+      "name": "OUT_FREQ",
+      "tagType": "AtomicTag",
+      "engUnit": "Hz",
+      "opcItemPath": {
+        "bindType": "parameter",
+        "binding": "ns=1;s=[{Device}]IR50"
+      },
+      "Metadata": {
+        "shortDescription": "Output Frequency"
+      }
+    },
+    {
+      "valueSource": "opc",
+      "dataType": "Int2",
+      "documentation": "Output kVA",
+      "name": "OUT_KVA",
+      "tagType": "AtomicTag",
+      "engUnit": "kVA",
+      "opcItemPath": {
+        "bindType": "parameter",
+        "binding": "ns=1;s=[{Device}]IR61"
+      },
+      "Metadata": {
+        "shortDescription": "Output kVA"
+      }
+    },
+    {
+      "valueSource": "opc",
+      "dataType": "Int2",
+      "documentation": "Output kW",
+      "name": "OUT_KW",
+      "tagType": "AtomicTag",
+      "engUnit": "kW",
+      "opcItemPath": {
+        "bindType": "parameter",
+        "binding": "ns=1;s=[{Device}]IR60"
+      },
+      "Metadata": {
+        "shortDescription": "Output kW"
+      }
+    },
+    {
+      "alarms": [
+        {
+          "mode": "WhenTrue",
+          "name": "Alarm"
+        }
+      ],
+      "valueSource": "opc",
+      "dataType": "Boolean",
+      "documentation": "Overload Shutdown",
+      "name": "OVRLD_SHTDN",
+      "tagType": "AtomicTag",
+      "opcItemPath": {
+        "bindType": "parameter",
+        "binding": "ns=1;s=[{Device}]C143"
+      },
+      "Metadata": {
+        "shortDescription": "Overload Shutdown",
+        "states": [
+          {
+            "label": "Normal",
+            "value": false
+          },
+          {
+            "label": "Alarm",
+            "value": true
+          }
+        ]
+      }
+    },
+    {
+      "alarms": [
+        {
+          "mode": "WhenTrue",
+          "name": "Alarm"
+        }
+      ],
+      "valueSource": "opc",
+      "dataType": "Boolean",
+      "documentation": "Power Output Overload",
+      "name": "PWR_OUT_OVRLD",
+      "tagType": "AtomicTag",
+      "opcItemPath": {
+        "bindType": "parameter",
+        "binding": "ns=1;s=[{Device}]C13"
+      },
+      "Metadata": {
+        "shortDescription": "Power Output Overload",
+        "states": [
+          {
+            "label": "Normal",
+            "value": false
+          },
+          {
+            "label": "Alarm",
+            "value": true
+          }
+        ]
+      }
+    },
+    {
+      "alarms": [
+        {
+          "mode": "WhenTrue",
+          "name": "Alarm"
+        }
+      ],
+      "valueSource": "opc",
+      "dataType": "Boolean",
+      "documentation": "Power System on Generator",
+      "name": "PWR_SYS_ON_GEN",
+      "tagType": "AtomicTag",
+      "opcItemPath": {
+        "bindType": "parameter",
+        "binding": "ns=1;s=[{Device}]C254"
+      },
+      "Metadata": {
+        "shortDescription": "Power System on Generator",
+        "states": [
+          {
+            "label": "Normal",
+            "value": false
+          },
+          {
+            "label": "Alarm",
+            "value": true
+          }
+        ]
+      }
+    },
+    {
+      "valueSource": "opc",
+      "dataType": "Int2",
+      "documentation": "Rectifier 1 Status",
+      "name": "RECT_01_STS",
+      "tagType": "AtomicTag",
+      "opcItemPath": {
+        "bindType": "parameter",
+        "binding": "ns=1;s=[{Device}]IR94"
+      },
+      "Metadata": {
+        "shortDescription": "Rectifier 1 Status",
+        "states": [
+          {
+            "label": "Off",
+            "value": false
+          },
+          {
+            "label": "On",
+            "value": true
+          }
+        ]
+      }
+    },
+    {
+      "valueSource": "opc",
+      "dataType": "Boolean",
+      "documentation": "Rectifier Fuse Blown",
+      "name": "RECT_FUSE_BLN",
+      "tagType": "AtomicTag",
+      "opcItemPath": {
+        "bindType": "parameter",
+        "binding": "ns=1;s=[{Device}]C257"
+      },
+      "Metadata": {
+        "shortDescription": "Rectifier Fuse Blown"
+      }
+    },
+    {
+      "alarms": [
+        {
+          "mode": "WhenTrue",
+          "name": "Alarm"
+        }
+      ],
+      "valueSource": "opc",
+      "dataType": "Boolean",
+      "documentation": "Reverse Power",
+      "name": "REV_PWR",
+      "tagType": "AtomicTag",
+      "opcItemPath": {
+        "bindType": "parameter",
+        "binding": "ns=1;s=[{Device}]C5"
+      },
+      "Metadata": {
+        "shortDescription": "Reverse Power",
+        "states": [
+          {
+            "label": "Normal",
+            "value": false
+          },
+          {
+            "label": "Alarm",
+            "value": true
+          }
+        ]
+      }
+    },
+    {
+      "valueSource": "opc",
+      "dataType": "Int2",
+      "documentation": "Rectifier Isolation Breaker Status",
+      "name": "RIB_STS",
+      "tagType": "AtomicTag",
+      "opcItemPath": {
+        "bindType": "parameter",
+        "binding": "ns=1;s=[{Device}]IR22"
+      },
+      "Metadata": {
+        "shortDescription": "Rectifier Isolation Breaker Status",
+        "states": [
+          {
+            "label": "Open",
+            "value": false
+          },
+          {
+            "label": "Closed",
+            "value": true
+          },
+          {
+            "label": "Not Installed",
+            "value": "2"
+          }
+        ]
+      }
+    },
+    {
+      "valueSource": "opc",
+      "dataType": "Int2",
+      "documentation": "Static Bypass Switch Status",
+      "name": "STATIC_BYP_SW_STS",
+      "tagType": "AtomicTag",
+      "opcItemPath": {
+        "bindType": "parameter",
+        "binding": "ns=1;s=[{Device}]IR73"
+      },
+      "Metadata": {
+        "shortDescription": "Static Bypass Switch Status",
+        "states": [
+          {
+            "label": "Off",
+            "value": false
+          },
+          {
+            "label": "On",
+            "value": true
+          }
+        ]
+      }
+    },
+    {
+      "valueSource": "opc",
+      "dataType": "Int2",
+      "documentation": "Static Bypass Voltage A-B",
+      "name": "STATIC_BYP_V_AB",
+      "tagType": "AtomicTag",
+      "engUnit": "V",
+      "opcItemPath": {
+        "bindType": "parameter",
+        "binding": "ns=1;s=[{Device}]IR23"
+      },
+      "Metadata": {
+        "shortDescription": "Static Bypass Voltage A-B"
+      }
+    },
+    {
+      "valueSource": "opc",
+      "dataType": "Int2",
+      "documentation": "Static Bypass Voltage B-C",
+      "name": "STATIC_BYP_V_BC",
+      "tagType": "AtomicTag",
+      "engUnit": "V",
+      "opcItemPath": {
+        "bindType": "parameter",
+        "binding": "ns=1;s=[{Device}]IR24"
+      },
+      "Metadata": {
+        "shortDescription": "Static Bypass Voltage B-C"
+      }
+    },
+    {
+      "valueSource": "opc",
+      "dataType": "Int2",
+      "documentation": "Static Bypass Voltage C-A",
+      "name": "STATIC_BYP_V_CA",
+      "tagType": "AtomicTag",
+      "engUnit": "V",
+      "opcItemPath": {
+        "bindType": "parameter",
+        "binding": "ns=1;s=[{Device}]IR25"
+      },
+      "Metadata": {
+        "shortDescription": "Static Bypass Voltage C-A"
+      }
+    },
+    {
+      "valueSource": "opc",
+      "dataType": "Int2",
+      "documentation": "System Output Percent Phase A",
+      "name": "SYS_OUT_PCT_A",
+      "tagType": "AtomicTag",
+      "engUnit": "%",
+      "opcItemPath": {
+        "bindType": "parameter",
+        "binding": "ns=1;s=[{Device}]IR65"
+      },
+      "Metadata": {
+        "shortDescription": "System Output Percent Phase A"
+      }
+    },
+    {
+      "valueSource": "opc",
+      "dataType": "Int2",
+      "documentation": "System Output Percent Phase B",
+      "name": "SYS_OUT_PCT_B",
+      "tagType": "AtomicTag",
+      "engUnit": "%",
+      "opcItemPath": {
+        "bindType": "parameter",
+        "binding": "ns=1;s=[{Device}]IR66"
+      },
+      "Metadata": {
+        "shortDescription": "System Output Percent Phase B"
+      }
+    },
+    {
+      "valueSource": "opc",
+      "dataType": "Int2",
+      "documentation": "System Output Percent Phase C",
+      "name": "SYS_OUT_PCT_C",
+      "tagType": "AtomicTag",
+      "engUnit": "%",
+      "opcItemPath": {
+        "bindType": "parameter",
+        "binding": "ns=1;s=[{Device}]IR67"
+      },
+      "Metadata": {
+        "shortDescription": "System Output Percent Phase C"
+      }
+    },
+    {
+      "valueSource": "opc",
+      "dataType": "Int2",
+      "documentation": "Total Battery Discharge",
+      "name": "TOT_BATT_DSCHRG",
+      "tagType": "AtomicTag",
+      "opcItemPath": {
+        "bindType": "parameter",
+        "binding": "ns=1;s=[{Device}]IR190"
+      },
+      "Metadata": {
+        "shortDescription": "Total Battery Discharge"
+      }
+    },
+    {
+      "valueSource": "opc",
+      "dataType": "Int2",
+      "documentation": "Total Operating Hours",
+      "name": "TOT_OPRG_HRS",
+      "tagType": "AtomicTag",
+      "engUnit": "hrs",
+      "opcItemPath": {
+        "bindType": "parameter",
+        "binding": "ns=1;s=[{Device}]IR164"
+      },
+      "Metadata": {
+        "shortDescription": "Total Operating Hours"
+      }
+    },
+    {
+      "alarms": [
+        {
+          "mode": "WhenTrue",
+          "name": "Alarm"
+        }
+      ],
+      "valueSource": "opc",
+      "dataType": "Boolean",
+      "documentation": "UPS on Bypsass",
+      "name": "UPS_ON_BYP",
+      "tagType": "AtomicTag",
+      "opcItemPath": {
+        "bindType": "parameter",
+        "binding": "ns=1;s=[{Device}]C266"
+      },
+      "Metadata": {
+        "shortDescription": "UPS on Bypsass",
+        "states": [
+          {
+            "label": "Normal",
+            "value": false
+          },
+          {
+            "label": "Alarm",
+            "value": true
+          }
+        ]
+      }
+    },
+    {
+      "valueSource": "opc",
+      "dataType": "Int2",
+      "documentation": "UPS Online",
+      "name": "UPS_ONLINE",
+      "tagType": "AtomicTag",
+      "opcItemPath": {
+        "bindType": "parameter",
+        "binding": "ns=1;s=[{Device}]IR167"
+      },
+      "Metadata": {
+        "shortDescription": "UPS Online"
+      }
+    },
+    {
+      "valueSource": "opc",
+      "dataType": "Int2",
+      "documentation": "Voltage In A-B",
+      "name": "V_IN_AB",
+      "tagType": "AtomicTag",
+      "engUnit": "V",
+      "opcItemPath": {
+        "bindType": "parameter",
+        "binding": "ns=1;s=[{Device}]IR1"
+      },
+      "Metadata": {
+        "shortDescription": "Voltage In A-B"
+      },
+      "historyEnabled": "true",
+      "historySampleRateUnits": "MIN",
+      "historySampleRate": 5
+    },
+    {
+      "valueSource": "opc",
+      "dataType": "Int2",
+      "documentation": "Voltage In B-C",
+      "name": "V_IN_BC",
+      "tagType": "AtomicTag",
+      "engUnit": "V",
+      "opcItemPath": {
+        "bindType": "parameter",
+        "binding": "ns=1;s=[{Device}]IR2"
+      },
+      "Metadata": {
+        "shortDescription": "Voltage In B-C"
+      },
+      "historyEnabled": "true",
+      "historySampleRateUnits": "MIN",
+      "historySampleRate": 5
+    },
+    {
+      "valueSource": "opc",
+      "dataType": "Int2",
+      "documentation": "Voltage In C-A",
+      "name": "V_IN_CA",
+      "tagType": "AtomicTag",
+      "engUnit": "V",
+      "opcItemPath": {
+        "bindType": "parameter",
+        "binding": "ns=1;s=[{Device}]IR3"
+      },
+      "Metadata": {
+        "shortDescription": "Voltage In C-A"
+      },
+      "historyEnabled": "true",
+      "historySampleRateUnits": "MIN",
+      "historySampleRate": 5
+    },
+    {
+      "valueSource": "opc",
+      "dataType": "Int2",
+      "documentation": "Voltage Out A-B",
+      "name": "V_OUT_AB",
+      "tagType": "AtomicTag",
+      "engUnit": "V",
+      "opcItemPath": {
+        "bindType": "parameter",
+        "binding": "ns=1;s=[{Device}]IR38"
+      },
+      "Metadata": {
+        "shortDescription": "Voltage Out A-B"
+      },
+      "historyEnabled": "true",
+      "historySampleRateUnits": "MIN",
+      "historySampleRate": 5
+    },
+    {
+      "valueSource": "opc",
+      "dataType": "Int2",
+      "documentation": "Voltage Out A-N",
+      "name": "V_OUT_AN",
+      "tagType": "AtomicTag",
+      "engUnit": "V",
+      "opcItemPath": {
+        "bindType": "parameter",
+        "binding": "ns=1;s=[{Device}]IR41"
+      },
+      "Metadata": {
+        "shortDescription": "Voltage Out A-N"
+      },
+      "historyEnabled": "true",
+      "historySampleRateUnits": "MIN",
+      "historySampleRate": 5
+    },
+    {
+      "valueSource": "opc",
+      "dataType": "Int2",
+      "documentation": "Voltage Out B-C",
+      "name": "V_OUT_BC",
+      "tagType": "AtomicTag",
+      "engUnit": "V",
+      "opcItemPath": {
+        "bindType": "parameter",
+        "binding": "ns=1;s=[{Device}]IR39"
+      },
+      "Metadata": {
+        "shortDescription": "Voltage Out B-C"
+      },
+      "historyEnabled": "true",
+      "historySampleRateUnits": "MIN",
+      "historySampleRate": 5
+    },
+    {
+      "valueSource": "opc",
+      "dataType": "Int2",
+      "documentation": "Voltage Out B-N",
+      "name": "V_OUT_BN",
+      "tagType": "AtomicTag",
+      "engUnit": "V",
+      "opcItemPath": {
+        "bindType": "parameter",
+        "binding": "ns=1;s=[{Device}]IR42"
+      },
+      "Metadata": {
+        "shortDescription": "Voltage Out B-N"
+      },
+      "historyEnabled": "true",
+      "historySampleRateUnits": "MIN",
+      "historySampleRate": 5
+    },
+    {
+      "valueSource": "opc",
+      "dataType": "Int2",
+      "documentation": "Voltage Out C-A",
+      "name": "V_OUT_CA",
+      "tagType": "AtomicTag",
+      "engUnit": "V",
+      "opcItemPath": {
+        "bindType": "parameter",
+        "binding": "ns=1;s=[{Device}]IR40"
+      },
+      "Metadata": {
+        "shortDescription": "Voltage Out C-A"
+      },
+      "historyEnabled": "true",
+      "historySampleRateUnits": "MIN",
+      "historySampleRate": 5
+    },
+    {
+      "valueSource": "opc",
+      "dataType": "Int2",
+      "documentation": "Voltage Out C-N",
+      "name": "V_OUT_CN",
+      "tagType": "AtomicTag",
+      "engUnit": "V",
+      "opcItemPath": {
+        "bindType": "parameter",
+        "binding": "ns=1;s=[{Device}]IR43"
+      },
+      "Metadata": {
+        "shortDescription": "Voltage Out C-N"
+      },
+      "historyEnabled": "true",
+      "historySampleRateUnits": "MIN",
+      "historySampleRate": 5
+    },
+    {
+      "alarms": [
+        {
+          "mode": "WhenTrue",
+          "name": "Alarm"
+        }
+      ],
+      "valueSource": "opc",
+      "dataType": "Int2",
+      "documentation": "Warning Summary Alarm",
+      "name": "WRN_SMRY_ALM",
+      "tagType": "AtomicTag",
+      "opcItemPath": {
+        "bindType": "parameter",
+        "binding": "ns=1;s=[{Device}]IR169"
+      },
+      "Metadata": {
+        "shortDescription": "Warning Summary Alarm",
+        "states": [
+          {
+            "label": "Normal",
+            "value": false
+          },
+          {
+            "label": "Alarm",
+            "value": true
+          }
+        ]
+      }
+    }
+  ]
+}

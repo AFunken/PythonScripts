@@ -1,0 +1,303 @@
+{
+  "name": "BUSWAY",
+  "tagType": "UdtType",
+  "parameters": {
+    "Device": {
+      "dataType": "String",
+      "value": ""
+    },
+    "Server": {
+      "dataType": "String",
+      "value": "Ignition OPC UA Server"
+    }
+  },
+  "tags": [
+    {
+      "valueSource": "opc",
+      "dataType": "Float4",
+      "documentation": "Frequency",
+      "name": "FREQ",
+      "tagType": "AtomicTag",
+      "engUnit": "Hz",
+      "opcItemPath": {
+        "bindType": "parameter",
+        "binding": "ns=1;s=[{Device}]IR490"
+      },
+      "Metadata": {
+        "shortDescription": "Frequency"
+      },
+      "historyEnabled": "true",
+      "historySampleRateUnits": "MIN",
+      "historySampleRate": 5
+    },
+    {
+      "valueSource": "opc",
+      "dataType": "Float4",
+      "documentation": "Current in A",
+      "name": "I_IN_A",
+      "tagType": "AtomicTag",
+      "engUnit": "A",
+      "opcItemPath": {
+        "bindType": "parameter",
+        "binding": "ns=1;s=[{Device}]IR512"
+      },
+      "Metadata": {
+        "shortDescription": "Current in A"
+      },
+      "historyEnabled": "true",
+      "historySampleRateUnits": "MIN",
+      "historySampleRate": 5
+    },
+    {
+      "valueSource": "opc",
+      "dataType": "Float4",
+      "documentation": "Current in B",
+      "name": "I_IN_B",
+      "tagType": "AtomicTag",
+      "engUnit": "A",
+      "opcItemPath": {
+        "bindType": "parameter",
+        "binding": "ns=1;s=[{Device}]IR544"
+      },
+      "Metadata": {
+        "shortDescription": "Current in B"
+      },
+      "historyEnabled": "true",
+      "historySampleRateUnits": "MIN",
+      "historySampleRate": 5
+    },
+    {
+      "valueSource": "opc",
+      "dataType": "Float4",
+      "documentation": "Current in C",
+      "name": "I_IN_C",
+      "tagType": "AtomicTag",
+      "engUnit": "A",
+      "opcItemPath": {
+        "bindType": "parameter",
+        "binding": "ns=1;s=[{Device}]IR576"
+      },
+      "Metadata": {
+        "shortDescription": "Current in C"
+      },
+      "historyEnabled": "true",
+      "historySampleRateUnits": "MIN",
+      "historySampleRate": 5
+    },
+    {
+      "valueSource": "opc",
+      "dataType": "Float4",
+      "documentation": "Neutral Current",
+      "name": "I_N",
+      "tagType": "AtomicTag",
+      "engUnit": "A",
+      "opcItemPath": {
+        "bindType": "parameter",
+        "binding": "ns=1;s=[{Device}]IR624"
+      },
+      "Metadata": {
+        "shortDescription": "Neutral Current"
+      },
+      "historyEnabled": "true",
+      "historySampleRateUnits": "MIN",
+      "historySampleRate": 5
+    },
+    {
+      "valueSource": "opc",
+      "dataType": "Float8",
+      "documentation": "kVA",
+      "name": "KVA",
+      "tagType": "AtomicTag",
+      "engUnit": "VA",
+      "opcItemPath": {
+        "bindType": "parameter",
+        "binding": "ns=1;s=[{Device}]IR480"
+      },
+      "Metadata": {
+        "shortDescription": "kVA"
+      },
+      "historyEnabled": "true",
+      "historySampleRateUnits": "MIN",
+      "historySampleRate": 5
+    },
+    {
+      "valueSource": "opc",
+      "dataType": "Float8",
+      "documentation": "VAR",
+      "name": "kVAR",
+      "tagType": "AtomicTag",
+      "engUnit": "VAR",
+      "opcItemPath": {
+        "bindType": "parameter",
+        "binding": "ns=1;s=[{Device}]IR472"
+      },
+      "Metadata": {
+        "shortDescription": "VAR"
+      },
+      "historyEnabled": "true",
+      "historySampleRateUnits": "MIN",
+      "historySampleRate": 5
+    },
+    {
+      "valueSource": "opc",
+      "dataType": "Float8",
+      "documentation": "kW",
+      "name": "KW",
+      "tagType": "AtomicTag",
+      "engUnit": "W",
+      "opcItemPath": {
+        "bindType": "parameter",
+        "binding": "ns=1;s=[{Device}]IR460"
+      },
+      "Metadata": {
+        "shortDescription": "kW"
+      },
+      "historyEnabled": "true",
+      "historySampleRateUnits": "MIN",
+      "historySampleRate": 5
+    },
+    {
+      "valueSource": "opc",
+      "dataType": "Float8",
+      "documentation": "kWh",
+      "name": "KWH",
+      "tagType": "AtomicTag",
+      "engUnit": "kWh",
+      "opcItemPath": {
+        "bindType": "parameter",
+        "binding": "ns=1;s=[{Device}]IR492"
+      },
+      "Metadata": {
+        "shortDescription": "kWh"
+      },
+      "historyEnabled": "true",
+      "historySampleRateUnits": "MIN",
+      "historySampleRate": 5
+    },
+    {
+      "valueSource": "opc",
+      "dataType": "Float4",
+      "documentation": "Power Factor",
+      "name": "PF",
+      "tagType": "AtomicTag",
+      "opcItemPath": {
+        "bindType": "parameter",
+        "binding": "ns=1;s=[{Device}]IR488"
+      },
+      "Metadata": {
+        "shortDescription": "Power Factor"
+      },
+      "historyEnabled": "true",
+      "historySampleRateUnits": "MIN",
+      "historySampleRate": 5
+    },
+    {
+      "valueSource": "opc",
+      "dataType": "Float4",
+      "documentation": "Voltage In A-B",
+      "name": "V_IN_AB",
+      "tagType": "AtomicTag",
+      "engUnit": "V",
+      "opcItemPath": {
+        "bindType": "parameter",
+        "binding": "ns=1;s=[{Device}]IR642"
+      },
+      "Metadata": {
+        "shortDescription": "Voltage In A-B"
+      },
+      "historyEnabled": "true",
+      "historySampleRateUnits": "MIN",
+      "historySampleRate": 5
+    },
+    {
+      "valueSource": "opc",
+      "dataType": "Float4",
+      "documentation": "Voltage In A-N",
+      "name": "V_IN_AN",
+      "tagType": "AtomicTag",
+      "engUnit": "V",
+      "opcItemPath": {
+        "bindType": "parameter",
+        "binding": "ns=1;s=[{Device}]IR640"
+      },
+      "Metadata": {
+        "shortDescription": "Voltage In A-N"
+      },
+      "historyEnabled": "true",
+      "historySampleRateUnits": "MIN",
+      "historySampleRate": 5
+    },
+    {
+      "valueSource": "opc",
+      "dataType": "Float4",
+      "documentation": "Voltage In B-C",
+      "name": "V_IN_BC",
+      "tagType": "AtomicTag",
+      "engUnit": "V",
+      "opcItemPath": {
+        "bindType": "parameter",
+        "binding": "ns=1;s=[{Device}]IR674"
+      },
+      "Metadata": {
+        "shortDescription": "Voltage In B-C"
+      },
+      "historyEnabled": "true",
+      "historySampleRateUnits": "MIN",
+      "historySampleRate": 5
+    },
+    {
+      "valueSource": "opc",
+      "dataType": "Float4",
+      "documentation": "Voltage In B-N",
+      "name": "V_IN_BN",
+      "tagType": "AtomicTag",
+      "engUnit": "V",
+      "opcItemPath": {
+        "bindType": "parameter",
+        "binding": "ns=1;s=[{Device}]IR672"
+      },
+      "Metadata": {
+        "shortDescription": "Voltage In B-N"
+      },
+      "historyEnabled": "true",
+      "historySampleRateUnits": "MIN",
+      "historySampleRate": 5
+    },
+    {
+      "valueSource": "opc",
+      "dataType": "Float4",
+      "documentation": "Voltage In C-A",
+      "name": "V_IN_CA",
+      "tagType": "AtomicTag",
+      "engUnit": "V",
+      "opcItemPath": {
+        "bindType": "parameter",
+        "binding": "ns=1;s=[{Device}]IR706"
+      },
+      "Metadata": {
+        "shortDescription": "Voltage In C-A"
+      },
+      "historyEnabled": "true",
+      "historySampleRateUnits": "MIN",
+      "historySampleRate": 5
+    },
+    {
+      "valueSource": "opc",
+      "dataType": "Float4",
+      "documentation": "Voltage In C-N",
+      "name": "V_IN_CN",
+      "tagType": "AtomicTag",
+      "engUnit": "V",
+      "opcItemPath": {
+        "bindType": "parameter",
+        "binding": "ns=1;s=[{Device}]IR704"
+      },
+      "Metadata": {
+        "shortDescription": "Voltage In C-N"
+      },
+      "historyEnabled": "true",
+      "historySampleRateUnits": "MIN",
+      "historySampleRate": 5
+    }
+  ]
+}
